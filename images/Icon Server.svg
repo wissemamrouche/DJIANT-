@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW 2020 (64-Bit Version d’évaluation) -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="59px" height="59px" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 0.81 0.81"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .fil0 {fill:none;fill-rule:nonzero}
+    .fil1 {fill:#383838;fill-rule:nonzero}
+   ]]>
+  </style>
+ </defs>
+ <g id="Plan_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g id="_2126675109424">
+   <g>
+    <polygon class="fil0" points="0.81,0.81 0,0.81 0,0 0.81,0 "/>
+   </g>
+   <g>
+    <path class="fil1" d="M0.68 0.07l-0.54 0c-0.04,0 -0.07,0.03 -0.07,0.07l0 0.33c0,0.04 0.03,0.07 0.07,0.07l0.23 0 0 0.14 -0.17 0 0 0.07 0.41 0 0 -0.07 -0.17 0 0 -0.14 0.24 0c0.03,0 0.07,-0.03 0.07,-0.07l0 -0.33c0,-0.04 -0.04,-0.07 -0.07,-0.07zm0 0.07l0 0 0 0.13 -0.54 0 0 -0.13 0.54 0zm-0.54 0.33l0 0 0 -0.13 0.54 0 0 0.13 -0.54 0z"/>
+    <polygon class="fil1" points="0.34,0.17 0.17,0.17 0.17,0.24 0.34,0.24 "/>
+    <polygon class="fil1" points="0.17,0.44 0.34,0.44 0.34,0.37 0.17,0.37 "/>
+    <path class="fil1" d="M0.68 0.68c-0.02,0 -0.04,0.01 -0.04,0.03 0,0.02 0.02,0.04 0.04,0.04 0.02,0 0.03,-0.02 0.03,-0.04 0,-0.02 -0.01,-0.03 -0.03,-0.03z"/>
+    <path class="fil1" d="M0.14 0.68c-0.02,0 -0.04,0.01 -0.04,0.03 0,0.02 0.02,0.04 0.04,0.04 0.01,0 0.03,-0.02 0.03,-0.04 0,-0.02 -0.02,-0.03 -0.03,-0.03z"/>
+    <path class="fil1" d="M0.51 0.24c0.02,0 0.03,-0.02 0.03,-0.04 0,-0.02 -0.01,-0.03 -0.03,-0.03 -0.02,0 -0.04,0.01 -0.04,0.03 0,0.02 0.02,0.04 0.04,0.04z"/>
+    <path class="fil1" d="M0.61 0.24c0.02,0 0.03,-0.02 0.03,-0.04 0,-0.02 -0.01,-0.03 -0.03,-0.03 -0.02,0 -0.03,0.01 -0.03,0.03 0,0.02 0.01,0.04 0.03,0.04z"/>
+    <path class="fil1" d="M0.51 0.37c-0.02,0 -0.04,0.02 -0.04,0.04 0,0.02 0.02,0.03 0.04,0.03 0.02,0 0.03,-0.01 0.03,-0.03 0,-0.02 -0.01,-0.04 -0.03,-0.04z"/>
+    <path class="fil1" d="M0.61 0.37c-0.02,0 -0.03,0.02 -0.03,0.04 0,0.02 0.01,0.03 0.03,0.03 0.02,0 0.03,-0.01 0.03,-0.03 0,-0.02 -0.01,-0.04 -0.03,-0.04z"/>
+   </g>
+  </g>
+ </g>
+</svg>

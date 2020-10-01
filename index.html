@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<!-- first let's start with the basics : headeres , title and scripts needed -->
+<head>
+<meta charset="utf-8"/>
+<title>Djiant Explorer</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+<link href="assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<link href="toastr/css/toastr.css" rel="stylesheet"/>
+<script src="toastr/js/toastr.js"></script>
+<link rel="stylesheet" type="text/css" href="assets/global/css/toastr.css" />
+
+	
+<link href="assets/global/plugins/racine/racine.css" rel="stylesheet" type="text/css"/> 
+<script src="jquery/jquery.min.js"></script> 
+
+<link href="assets/global/css/components.css" id="style_components" rel="stylesheet" type="text/css"/>
+<link href="assets/global/css/plugins.css" rel="stylesheet" type="text/css"/>
+<link href="assets/admin-layout/css/layout.css" rel="stylesheet" type="text/css"/>
+<link href="assets/admin-layout/css/themes/darkblue.css" rel="stylesheet" type="text/css" id="style_color"/>
+<link href="assets/admin-layout/css/custom.css" rel="stylesheet" type="text/css"/>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<!-- END THEME STYLES -->
+
+<link rel="icon" type="image/png" href="assets/image/logo-djiant.png" />
+</head><body class="page-header-fixed page-quick-sidebar-over-content page-full-width">
+<!-- BEGIN HEADER -->
+<div class="page-header -i navbar navbar-fixed-top">
+	<!-- BEGIN HEADER INNER -->
+	<div class="page-header-inner">
+		<!-- BEGIN LOGO -->
+		<div class="page-logo">
+			<img style="margin-right: 6px;" src="images\Icon Logo Djiant.svg" width="22px"> <span class=" note"> 
+			</span><img style="margin-right: 6px;" src="images\Icon D Pages.svg" width="22px"> 
+			D - pages 
+			
+			 
+			
+		</div>
+	
+	</div>
+	<!-- END HEADER INNER -->
+</div>
+<div class="page-header -i navbar navbar-fixed-top" style="margin-top: 40px;">
+	<!-- BEGIN HEADER INNER -->
+	<div class="page-header-inner">
+		<div class="col-md-2 " style="margin-right: 40px;padding-left:1px;">
+			<div  class="  note-header">Emplacements</div>
+		</div>	
+		<div class="col-md-2" style="margin-right: 55px;">
+			<div class=" note-header">Ressources</div>
+		</div>	
+		<div class="col-md-6 " style="margin-right: 40px;">
+			<div class=" note-header">Détails</div>
+		</div>	
+	</div>
+	<!-- END HEADER INNER -->
+</div>
+<!-- END HEADER -->
+<div class="clearfix ">
+</div>
+<!-- BEGIN CONTAINER -->
+<div class="page-container"  >
+	<!-- BEGIN SIDEBAR -->
+	<!-- END SIDEBAR -->
+
+
+	<!-- BEGIN CONTENT -->
+	<div class="page-content-wrapper" >
+		<div class="page-content">
+			<!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+				
+			<!-- /.modal -->
+			<!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+				
+			<!-- BEGIN DASHBOARD STATS -->
+					<div class="col-md-2 ">
+						<div class="portlet light ">
+							
+							<div class="portlet-body ">
+
+							<ul id="racine" >						
+				  			  <li  style="padding: 0px 0px;margin-bottom: 30px;margin-left:1px;" ><span class="racine racine-down ">Favoris</span>
+				  			  	<ul class="domaine active">
+				  			  		
+				  			  						      				<li id="1 "  class="domaine-list selected" >
+				      				 <img class="selected-img" src="images\Icon Network.svg" style=" width:22px; margin-right: 6px;" > Networks </li>  
+				      				
+				      							      				<li id="2 "  class="domaine-list " >
+				      				 <img class="" src="images\Icon Server.svg" style=" width:22px; margin-right: 6px;" > Servers </li>  
+				      				
+				      							      				<li id="3 "  class="domaine-list " >
+				      				 <img class="" src="images\Icon Business server.svg" style=" width:22px; margin-right: 6px;" > Business folders </li>  
+				      				
+				      							      				
+				      				
+				      			
+   			   					</ul>
+								</li>
+								<li  style="padding: 0px 0px;margin-bottom: 30px;" ><span class="racine racine-down "> Publications</span>
+				  			  	<ul class="domaine active">
+				  			  		
+				  			  						      				<li id="1 "  class="domaine-list " onclick="toggle4('network');"  >
+				      				 <img class="" src="images\Icon Nouveau.svg" style=" width:22px; margin-right: 6px;" > Nouveau </li>  
+				      				
+				      							      				<li id="2 "  class="domaine-list " >
+				      				 <img class="" src="images\Icon Publications$.svg" style=" width:22px; margin-right: 6px;" > Publications </li>  
+				      				
+				      							      				<li id="3 "  class="domaine-list " >
+				      				 <img class="" src="images\Icon Brouillons.svg" style=" width:22px; margin-right: 6px;" > Brouillons </li>  
+				      				
+									   <li id="3 "  class="domaine-list " >
+										<img class="" src="images\Icon Corbeille.svg" style=" width:22px; margin-right: 6px;" > Corbeille </li>  
+										<li id="3 "  class="domaine-list " >
+											<img class="" src="images\Icon Rapport acativites.svg" style=" width:22px; margin-right: 6px;" > Rapport d'activités</li>  
+														
+				      				
+				      			
+   			   					</ul>
+								</li>
+								<li  style="padding: 0px 0px;margin-bottom: 30px;" ><span class="racine racine-down "> Compte</span>
+				  			  	<ul class="domaine active">
+				  			  		
+				  			  						      				<li id="1 "  class="domaine-list" >
+				      				 <img class="" src="images\Icon Mes donnes.svg " style=" width:22px; margin-right: 6px;" > Mes données personelles </li>  
+				      				
+				      							      				<li id="2 "  class="domaine-list " >
+				      				 <img class="" src="images\Icon Abonnements et factures.svg" style=" width:22px; margin-right: 6px;" > Abonnements et factures </li>  
+				      				
+				      				
+														
+				      		
+				      			
+   			   					</ul>
+				  			  </li>
+							</ul>
+							
+							</div>
+						</div>
+						
+					</div>
+				<div id="network" >
+					<div class="col-md-2 " style="margin-left:40px;">
+						<div class="portlet light  list-network">
+							<div class="portlet-body " >
+														<h4 class="main-network" >Publications Gratuites</h4>
+																	<a href="javascript:;" id="showa"  value="4" class="list-group-item "> <img style=" width:22px; margin-right: 6px;"  src="images\Icon Profil Entreprise.svg" > Profil de l'entreprise</a>
+																	<a href="javascript:;" id="showb"  value="5" class="list-group-item"> <img style=" width:22px; margin-right: 6px;" src="images\Icon Profil Perso.svg" > Profil personel</a>
+															<h4 class="communities-networks" >Publications avec abonnements</h4>
+																	<a href="javascript:;" value="1" class="list-group-item "> <img style=" width:22px; margin-right: 6px;" src="images\Icon Fiche produit.svg" > Fiche produit</a>
+																	<a href="javascript:;" value="2" class="list-group-item "> <img style=" width:22px; margin-right: 6px;" src="images\Icon Fiche service.svg" > Fiche service</a>
+																	<a href="javascript:;" value="3" class="list-group-item "> <img style=" width:22px; margin-right: 6px;" src="images\Icon Offre emploi.svg" > Offre d'emploi</a>
+																	<a href="javascript:;" value="26" class="list-group-item "> <img style=" width:22px; margin-right: 6px;" src="images\Icon Actualite.svg" > Actualité</a>
+																	<a href="javascript:;" value="28" class="list-group-item "> <img style=" width:22px; margin-right: 6px;" src="images\Icon Evenement.svg" > Evenement</a>
+																	<a href="javascript:;" value="1" class="list-group-item "> <img style=" width:22px; margin-right: 6px;" src="images\Icon Livre.svg" > Livre</a>
+																	<a href="javascript:;" value="2" class="list-group-item "> <img style=" width:22px; margin-right: 6px;" src="images\Icon Etude marche.svg" > Etude de marché</a>
+																	<a href="javascript:;" value="3" class="list-group-item "> <img style=" width:22px; margin-right: 6px;" src="images\Icon Business server.svg" > Spécial Education</a>
+																	<a href="javascript:;" value="26" class="list-group-item "> <img style=" width:22px; margin-right: 6px;" src="images\Icon Business server.svg" > Spécial TIC</a>
+																	<a href="javascript:;" value="28" class="list-group-item "> <img style=" width:22px; margin-right: 6px;" src="images\Icon Business server.svg" > Spécial Entrepreuneuriat</a>
+																	<a href="javascript:;" value="28" class="list-group-item "> <img style=" width:22px; margin-right: 6px;" src="images\Icon Business server.svg" > Spécial Announces classés</a>
+
+															</div>
+						</div>
+					</div>
+						<!-- I did 2 exemples to illustrate the transition between "profil entreprise" et "profil coollaborateur"-->
+						<div class="col-md-7 " style="margin-left:55px;" id = "a" class="collapse"  style="display:none;">
+							<div class="portlet light details-network">								
+							<div class="portlet-body " style="padding-top: 0px;">
+															<div class="thumbnail">
+											<img width="50%" style="margin-left: 130px;" src="images\Icon Profil Entreprise.svg"> 
+								<p style="text-align: right;">
+																	
+						
+								</div>
+									
+								<form class="details-form form-horizontal"  style="margin-left: 45px;">
+								<div class="form-group ">
+									<label class="col-md-2 control-label">Type </label>
+									 <div class="col-md-6">entreprise</div>
+								</div>
+								<div class="form-group">
+									<label class="col-md-2 control-label ">Description </label>
+									 <div class="col-md-4">utiliser ce modéle de document pour présenter et promouvoir une entreprise ou toute autre type d'entreprise </div>
+								</div>
+							
+								<button  class="btn btn-sm default" style="margin-left:110px;"  data-toggle="modal" data-target="#mymodal" >Créer </button>
+							
+								</form>
+									
+							</div>
+							
+						</div>
+						
+			<!-- END DASHBOARD STATS -->
+		</div>
+	</div>
+	<!-- END CONTENT -->
+</div>
+
+
+<script src="assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+
+
+<!-- IMPORTANT! Load jquery-ui.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+<script src="assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<!-- END CORE PLUGINS -->
+<!-- BEGIN PAGE LEVEL PLUGINS -->
+<script src="assets/global/plugins/bootstrap-modal/js/bootstrap-modalmanager.js" type="text/javascript"></script>
+<script src="assets/global/plugins/bootstrap-modal/js/bootstrap-modal.js" type="text/javascript"></script>
+<script src="assets/global/plugins/racine/racine.js" type="text/javascript"></script>
+<!-- END PAGE LEVEL PLUGINS -->
+<!-- BEGIN PAGE LEVEL SCRIPTS -->
+<script src="assets/global/scripts/metronic.js" type="text/javascript"></script>
+<script src="assets/global/scripts/toastr.js" type="text/javascript"></script>
+<script src="assets\admin-layout\scripts\layout.js" type="text/javascript"></script>
+
+<!-- END PAGE LEVEL SCRIPTS -->
+
+<!-- END JAVASCRIPTS -->
+<!-- start of the first modal popup-->
+<div class="container">
+	<div  class="modal " id="mymodal" data-backdrop="false" tabindex="-1" role="dialog"> 
+		<div class="modal-dialog modal-lg modal-dialog-scrollable"
+		> 
+			<div class="modal-content">
+				<div class="modal-header">
+					<div class="page-logo">
+						<img style="margin-right: 6px;" src="images\Icon Logo Djiant.svg" width="22px"> <span class=" note"> 
+						</span><img style="margin-right: 6px;" src="images\Icon D Pages.svg" width="22px"> 
+						D - pages | Nouveau (orgnanisation)
+					</div>
+				</div>
+					<div style="border-bottom: solid 1px #ddd;
+					">
+						<div style="padding:5px;">
+						<button  id="publier" class="btn btn-sm default" style="margin-left:10px;" data-toggle="modal" data-target="#mymodal1">Publier sous ...</button>
+						<button  class="btn btn-sm default" >Visualiser</button>
+						<button class="btn btn-sm default" >Annuler</button>
+						</div>
+					</div>
+				
+		<style>
+	     button#publier:active
+{
+	background:#383838;
+	color:white;
+}
+button#publier:focus
+{
+	background:#383838;
+	color:white;
+}
+.line {
+  width: 80px;
+  height: 1px;
+  border: none;
+  border-radius:10px;
+  background: linear-gradient(to right,black,white);
+  
+margin: 5px;
+display:inline-block;
+}
+ 
+
+		</style>
+		
+
+			<hr class="modal-body">
+
+			 <!-- start of the form--> 
+			
+				<form role="form" class='form-horizontal'>
+					<!-- image place --> 
+					<div class="row">
+						<div class="col-md-2"></div>
+						<div class="col-md-8"> 
+							<div class="form-group">
+								<div class="col-xs-6 text-right"></div>
+								<div class="col-xs-6">
+									<div class="form-group">
+										<div class="col-xs-6 text-right">
+											<img id="image-preview" style="width:150px; height:150px;"src="" >
+
+											<input style="display:none" id="input-image-hidden" onchange="document.getElementById('image-preview').src = window.URL.createObjectURL(this.files[0])" type="file" accept="image/jpeg, image/png">
+											
+										</div>
+										<div class="col-xs-6">
+											<button class="btn btn-sm default" style="height:20px;margin-left:1px; background-color: white;" onclick="HandleBrowseClick('input-image-hidden');" ></button>
+											<label style=" white-space :nowrap;  text-overflow: ellipsis;" for="cpTitle">Télecharger image</label>
+										</div>
+									</div>
+									 <!--<img style="border:1px solid #e5e5e5; margin-bottom:10px;" class="img-thumbnail"  width="304" height="200"> --> 
+									
+
+								</div>
+							</div>
+
+							
+
+						
+
+							
+						
+					</div>
+					<div class="col-md-2">
+						
+					</div> 
+
+				
+					
+
+				</div>
+
+				
+				
+				<!-- the start of identité -->
+				
+		    
+<div style="display:inline-block; margin-left:20px;">
+	<h4>
+		Identité
+	</h4>
+</div>
+<hr class="line">
+
+		        
+					
+					<div class="row">
+						<div class="col-md-2">
+						
+						</div>
+						<div class="col-md-8"> 
+							<div class="form-group">
+								<div class="col-xs-6 text-right">
+									<label for="cpTitle">Type</label>
+								</div>
+								<div class="col-xs-6">
+									<input type="text" class="form-control" placeholder="Organisation" id="cpTitle" />
+								</div>
+							</div>
+
+							<div class="form-group">
+								<div class="col-xs-6 text-right">
+									<label for="cpTitle">Sous-type</label>
+								</div>
+								<div class="col-xs-6">
+									<select id="inputState" class="form-control">
+										<option selected>Entreprise</option>
+										<option>...</option>
+									  </select>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<div class="col-xs-6 text-right">
+									<label for="cpTitle">Nom de l'orgnanisation</label>
+								</div>
+								<div class="col-xs-6">
+									<input type="text" class="form-control"  id="cpTitle" />
+								</div>
+							</div>
+
+							<div class="form-group">
+								<div class="col-xs-6 text-right">
+									<label for="cpTitle">Site web</label>
+								</div>
+								<div class="col-xs-6">
+									<input type="text" class="form-control" id="cpTitle" />
+								</div>
+							</div>
+						
+					</div>
+					<div class="col-md-2"></div> 
+
+				
+					
+
+				</div>
+				<!-- presentation /cas spécial-->
+				<div class="row">
+					<div class="col-md-2"></div>
+					<div class="col-md-8"> 
+						<div class="form-group">
+							<div class="col-xs-6 text-right">
+								<label for="cpTitle">Présentation</label>
+							</div>
+							<div class="col-xs-6">
+								<input type="text" class="form-control"  id="cpTitle" />
+							</div>
+						</div>
+
+						
+					
+				</div>
+				<div class="col-xs-2">
+					<svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-three-dots" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+					  </svg>
+				</div> 
+
+			
+				
+
+			</div> 
+
+		<!-- start of activité--> 
+		  
+		<div style="display:inline-block; margin-left:20px;">
+			<h4>
+				Activité 
+			</h4>
+		</div>
+		<hr class="line">
+				<div class="row">
+					<div class="col-md-2"></div>
+					<div class="col-md-8"> 
+						<div class="form-group">
+							<div class="col-xs-6 text-right">
+								<label for="cpTitle">Type d'activités</label>
+							</div>
+							<div class="col-xs-6">
+								<select id="cpTitle" class="form-control">
+									<option  selected  > <i class="fa fa-arrow-right"></i>Fabricant </option>
+									
+									<option>...</option>
+								  </select>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<div class="col-xs-6 text-right">
+								<label for="cpTitle">Code Naf</label>
+							</div>
+							<div class="col-xs-6">
+								<input type="text" class="form-control" id="cpTitle" placeholder="61-Activités informatiques">
+							</div>
+						</div>
+
+						
+					
+				</div>
+				<div class="col-md-2"></div> 
+
+			
+				
+
+			</div>
+			<!-- presentation /cas spécial-->
+			<div class="row">
+				<div class="col-md-2"></div>
+				<div class="col-md-8"> 
+					<div class="form-group">
+						<div class="col-xs-6 text-right">
+							<label for="cpTitle">Description</label>
+						</div>
+						<div class="col-xs-6">
+							<input type="text" class="form-control" id="cpTitle" />
+						</div>
+					</div>
+
+					
+				
+			</div>
+			<div class="col-md-2">
+				<svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-three-dots" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd" d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+				  </svg>
+			</div> 
+
+		
+			
+
+			</div> 
+				<!-- presentation /cas spécial-->
+				<div class="row">
+					<div class="col-md-2"></div>
+					<div class="col-md-8"> 
+						<div class="form-group">
+							<div class="col-xs-6 text-right">
+								<label for="cpTitle">Mots clés</label>
+							</div>
+							<div class="col-xs-6">
+								<input type="text" class="form-control"  id="cpTitle" />
+							</div>
+						</div>
+	
+						
+					
+				</div>
+				<div class="col-md-2">
+					<svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-three-dots" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+					  </svg>
+				</div> 
+	
+			
+				
+	
+				</div> 
+					<!-- presentation /cas spécial-->
+			<div class="row">
+				<div class="col-md-2"></div>
+				<div class="col-md-8"> 
+					<div class="form-group">
+						<div class="col-xs-6 text-right">
+							<label for="cpTitle">Marques </label>
+						</div>
+						<div class="col-xs-6">
+							<input type="text" class="form-control"  id="cpTitle" />
+						</div>
+					</div>
+
+					
+				
+			</div>
+			<div class="col-md-2">
+				<svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-three-dots" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd" d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+				  </svg>
+			</div> 
+
+		
+			
+
+			</div> 
+
+			<div class="row">
+				<div class="col-md-2"></div>
+				<div class="col-md-8"> 
+					<div class="form-group">
+						<div class="col-xs-6 text-right">
+							<label for="cpTitle">Tranche d'effectif</label>
+						</div>
+						<div class="col-xs-6">
+							<select id="cpTitle" class="form-control">
+								<option selected> 11-50</option>
+								<option>...</option>
+							  </select>
+						</div>
+					</div>
+
+					
+				
+			</div>
+			<div class="col-md-2"></div> 
+
+		
+			
+
+			</div> 
+
+			<!-- start of localisation-->
+			
+			<div style="display:inline-block; margin-left:20px;">
+				<h4>
+					Localisation
+				</h4>
+			</div>
+			<hr class="line">
+				<div class="row">
+					<div class="col-md-2"></div>
+					<div class="col-md-8"> 
+						<div class="form-group">
+							<div class="col-xs-6 text-right">
+								<label for="cpTitle">Pays</label>
+							</div>
+							<div class="col-xs-6">
+								<select id="cpTitle" class="form-control">
+									<option selected>France</option>
+									<option>...</option>
+								  </select>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<div class="col-xs-6 text-right">
+								<label for="cpTitle">Region-province</label>
+							</div>
+							<div class="col-xs-6">
+								<select id="inputState" class="form-control">
+									<option selected>Region sud</option>
+									<option>...</option>
+								  </select>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<div class="col-xs-6 text-right">
+								<label for="cpTitle">Code postal</label>
+							</div>
+							<div class="col-xs-6">
+								<input type="text" class="form-control" id="cpTitle" />
+							</div>
+						</div>
+
+						<div class="form-group">
+							<div class="col-xs-6 text-right">
+								<label for="cpTitle">Ville</label>
+							</div>
+							<div class="col-xs-6">
+								<input type="text" class="form-control"  id="cpTitle" />
+							</div>
+						</div>
+
+						<div class="form-group">
+							<div class="col-xs-6 text-right">
+								<label for="cpTitle">Adresse(Ligne1)</label>
+							</div>
+							<div class="col-xs-6">
+								<input type="text" class="form-control"  id="cpTitle" />
+							</div>
+						</div>
+
+						<div class="form-group">
+							<div class="col-xs-6 text-right">
+								<label for="cpTitle">Adresse(Ligne2)</label>
+							</div>
+							<div class="col-xs-6">
+								<input type="text" class="form-control"  id="cpTitle" />
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-xs-6 text-right">
+								<label for="cpTitle">Adresse(Ligne3)</label>
+							</div>
+							<div class="col-xs-6">
+								<input type="text" class="form-control"  id="cpTitle" />
+							</div>
+						</div>
+
+					
+					
+				</div>
+				<div class="col-md-2"></div> 
+
+			
+				
+
+			</div>
+
+			<!-- start of communication-->
+			
+			<div style="display:inline-block; margin-left:20px;">
+				<h4>
+					Communication
+				</h4>
+			</div>
+			<hr class="line">
+				<div class="row">
+					<div class="col-md-2"></div>
+					<div class="col-md-8"> 
+						<div class="form-group">
+							<div class="col-xs-6 text-right">
+								<label for="cpTitle">Télephone</label>
+							</div>
+							<div class="col-xs-6">
+								<input type="text" class="form-control"  id="cpTitle"  placeholder="0 33 0">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<div class="col-xs-6 text-right">
+								<label for="cpTitle">Courrier Electornique</label>
+							</div>
+							<div class="col-xs-6">
+								<select id="inputState" class="form-control">
+									<option selected>Entreprise</option>
+									<option>...</option>
+								  </select>
+							</div>
+						</div>
+
+						
+
+						
+
+						
+
+					
+					
+				</div>
+				<div class="col-md-2"></div> 
+
+			
+				
+
+			</div>
+			<!-- presentation /cas spécial-->
+			<div class="row">
+				<div class="col-md-2"></div>
+				<div class="col-md-8"> 
+					<div class="form-group" style="margin-bottom:40px;">
+						<div class="col-xs-6 text-right">
+							<label for="cpTitle">Réseaux sociaux </label>
+						</div>
+						<div class="col-xs-6">
+							<input type="text" class="form-control"  id="cpTitle" />
+						</div>
+					</div>
+
+					
+				
+			</div>
+			<div class="col-md-2">
+				<svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-three-dots" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd" d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+				  </svg>
+			</div> 
+
+		
+			
+
+			</div> 
+			
+			
+		  
+
+		
+			
+				
+				
+			</form>
+			</div>
+			</div>
+
+		</div>
+		
+	</div>
+
+
+</div>
+<div class="container">
+	<div  class="modal " id="mymodal1" data-backdrop="false" tabindex="-1" role="dialog"> 
+		<div class="modal-dialog modal-lg modal-dialog-scrollable" style="margin-top:107px;margin-left:213px;margin-bottom:100px;"
+		> 
+			<div class="modal-content">
+				<div class="modal-header">
+					<div class="page-logo" style="display: inline-flex; align-items: center;">
+						<svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-square" fill="#e5e5e5" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" d="M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+						  </svg>
+						</span>
+					    <div style="margin-left:10px;">Publier sous...</div>
+					</div>
+				
+			
+				<div style="border-bottom: solid 1px #ddd;
+					">
+						<div style="padding:5px;">
+							<div class="page-header -i navbar navbar-fixed-top" style="margin-top: 40px;">
+								<!-- BEGIN HEADER INNER -->
+								<div class="page-header-inner">
+									<div class="col-md-3 " style="margin-right:10px;padding-left:1px;">
+										<div  class="  note-header">Domaines</div>
+									</div>	
+									<div class="col-md-3" style="margin-right:10px;" >
+										<div class=" note-header">Réseaux</div>
+									</div>	
+									<div class="col-md-2 " style="margin-left:10px;" >
+										<div class=" note-header">Serveurs favoris</div>
+									</div>	
+									<div class="col-md-2 " >
+										<div class=" note-header">Partenaires</div>
+									</div>	
+								</div>
+								<!-- END HEADER INNER -->
+							
+						</div>
+					</div>
+				</div>
+				</div>
+
+				<div class="modal-body" >
+				
+					<div class="col-md-3 ">
+						<div class="portlet light " style="padding-top:14px ! important;">
+							
+							<div class="portlet-body " >
+
+							<ul id="racine" >						
+				  			
+				  			  	<ul class="domaine active" >
+				  			  		
+									<li id="1 "  class="domaine-list selected" >
+										<img class="selected-img" src="images\Square.svg" style=" width:22px; margin-right: 6px;" > Local </li>  
+									   
+																		 <li id="2 "  class="domaine-list " >
+										<img class="" src="images\Square.svg" style=" width:22px; margin-right: 6px;" > Commerce </li>  
+									   
+																		 <li id="3 "  class="domaine-list " >
+										<img class="" src="images\Square.svg" style=" width:22px; margin-right: 6px;" > Informations technologies </li> 
+
+										<li id="3 "  class="domaine-list " >
+											<img class="" src="images\Square.svg" style=" width:22px; margin-right: 6px;" > Education </li>  
+
+											<li id="3 "  class="domaine-list " >
+												<img class="" src="images\Square.svg" style=" width:22px; margin-right: 6px;" > Industries </li>  
+									   
+				      				
+				      				
+				      							      				
+				      				
+				      			
+   			   					</ul>
+								
+								
+								</ul>
+								
+							
+							</div>
+						</div>
+						
+					</div>
+
+				
+					<div id="networkk" >
+						<div class="col-md-3 ">
+							<div class="portlet light  list-network">
+								<div class="portlet-body " style="margin-left:10px;">
+															
+																		<a href="javascript:;" id="showa"  value="4" class="list-group-item "> <img style=" width:22px; margin-right: 6px;"  src="images\Square.svg" > Regional</a>
+																	
+																<h4 class="communities-networks" >Communities network</h4>
+																		<a href="javascript:;" value="1" class="list-group-item "> <img style=" width:22px; margin-right: 6px;" src="images\Square.svg" >Chambs works</a>
+																		<a href="javascript:;" value="2" class="list-group-item "> <img style=" width:22px; margin-right: 6px;" src="images\Square.svg" > Clusters</a>
+																		<a href="javascript:;" value="3" class="list-group-item "> <img style=" width:22px; margin-right: 6px;" src="images\Square.svg" > Local newspapers</a>
+																		<a href="javascript:;" value="3" class="list-group-item "> <img style=" width:22px; margin-right: 6px;" src="images\Square.svg" > Technoparks</a>
+																		
+	
+								</div>
+							</div>
+						</div>
+					 </div>
+					 <div id="networkkk" >
+						<div class="col-md-2 ">
+							<div class="portlet light  list-network" style="margin-left:10px;">
+								<div class="portlet-body " style="
+								padding-left:30px;">
+															
+								    
+									<a href="javascript:;" value="1" class="list-group-item "> <img style=" width:22px; margin-right: 6px;" src="images\stop-fill.svg" > Fiche produit</a>
+									<a href="javascript:;" value="2" class="list-group-item "> <img style=" width:22px; margin-right: 6px;" src="images\stop-fill.svg" > Fiche service</a>
+									<a href="javascript:;" value="3" class="list-group-item "> <img style=" width:15px; margin-right: 10px;margin-left:5px;" src="images\square.svg" > Offre d'emploi</a>
+									<a href="javascript:;" value="3" class="list-group-item "> <img style=" width:15px; margin-right: 10px;margin-left:5px;" src="images\square.svg" > Offre d'emploi</a>
+									
+
+</div>
+							</div>
+						</div>
+					 </div>
+					 
+					 <div id="networkkkk" >
+						<div class=" col-md-2 ">
+							
+							<div class="portlet light  list-network">
+								<div class="portlet-body " style="
+								padding-left:40px;">
+															
+								
+									<a href="javascript:;" value="1" class="list-group-item "> CCI Paca</a>
+									<a href="javascript:;" value="2" class="list-group-item "> La Gazelle Nord Pas de Calais</a>
+									<a href="javascript:;" value="3" class="list-group-item "> CCI De Lyon</a>
+									<a href="javascript:;" value="3" class="list-group-item "> La Tribune</a>
+									
+
+                              </div>
+							</div>
+						</div>
+					 </div>
+					 <form role="form" class='form-horizontal' style="margin-top:100px;">  
+						<div class="row" style=" padding-top: 16px;">
+							<div class="col-md-2">
+							
+							</div>
+							<div class="col-md-8"> 
+							
+								<div class="form-group">
+									<div class="col-xs-6 text-right">
+										<label for="cpTitle">Type</label>
+									</div>
+									<div class="col-xs-6">
+										<input type="text" class="form-control" placeholder="Entreprise" id="cpTitle" />
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-xs-6 text-right">
+										<label for="cpTitle">Nom de l'orgnanisation</label>
+									</div>
+									<div class="col-xs-6">
+										<input type="text" class="form-control"  id="cpTitle" />
+									</div>
+								</div> 
+								<div class="form-group">
+									<div class="col-xs-6 text-right">
+										<label for="cpTitle">Url</label>
+									</div>
+									<div class="col-xs-6">
+										<input type="text" class="form-control"  id="cpTitle" />
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-xs-6 text-right">
+										<label for="cpTitle">Tarifs</label>
+									</div>
+									<div class="col-xs-6">
+										<input type="text" class="form-control"  id="cpTitle" />
+									</div>
+								</div>
+	
+							
+							
+						
+	
+							
+						
+					  </div>
+					  <div class="col-md-2"></div>
+					  </div>
+					  </form>
+				  </div> 
+
+				
+				  <div class="modal-footer"> 
+					<button type="button" class="btn btn-sm default" data-dismiss="modal">Annuler</button>
+					<button type="button" class="btn btn-sm default">Publier</button>
+				
+					
+				
+				</div>
+				</div>
+				
+				
+				
+					
+		
+				
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+
+				
+</body>
+<script>
+	// Get the modal
+	var modal = document.getElementById('mymodal');
+	
+	// When the user clicks anywhere outside of the modal, close it
+	window.onclick = function(event) {
+	  if (event.target == modal) {
+		modal.style.display = "none";
+	  }
+	} 
+
+	
+
+
+	
+
+type="text/javascript">
+	function HandleBrowseClick(input_image)
+	{
+		var fileinput = document.getElementById(input_image);
+		fileinput.click();
+	}     
+	</script>
+	
+<!-- END BODY -->
+</html>
