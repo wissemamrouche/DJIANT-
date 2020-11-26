@@ -43,6 +43,72 @@
     margin: 0 !important;
   }
 }
+/*** wissem code **/ 
+button#publier:active
+{
+	background:#383838;
+	color:white;
+}
+button#publier:focus
+{
+	background:#383838;
+	color:white;
+}
+button#publier.selected{
+	background:#383838;
+	color:white;
+}
+.btn {
+	font-family:calibri light;
+	font-size: 14px;
+	font-weight:700;
+	border-radius: 5px !important;
+}
+.line {
+  width: 80px;
+  height: 1px;
+  border: none;
+  border-radius:10px;
+  background: linear-gradient(to right,black,white);
+  
+margin: 5px;
+display:inline-block; 
+
+}  
+
+.a{ 
+	color: black;  
+	white-space: nowrap; 
+	width: 100px; 
+	height:100px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin-bottom:15px;
+	margin-top:10px;
+}
+.a:hover{ 
+	overflow: visible;
+	color:black;
+	background-color:#f3f3f3;
+} 
+.a:focus{ 
+	overflow: visible;
+	color:black;
+
+} 
+
+hr{
+        height: 3px;
+        background-color: black;
+        border: none;
+	} 
+.colorr input::-webkit-input-placeholder{
+	color:black;
+} 
+.affixed {
+    display: block;
+} 
+
 /***
 Page Header
 ***/
@@ -72,13 +138,15 @@ Page Header
 .page-header.navbar .page-logo {
   float: left;
   display: block;
-  width: 208px;
+  width: 300px;
   height: 41px;
   padding-left: 0px;
   padding-right: 20px;
   padding-top: 9px;
   font-size: 14px;
   font-weight: 700;
+ 
+
 }
 .page-sidebar-closed.page-sidebar-closed-hide-logo .page-header.navbar .page-logo {
   padding: 0;

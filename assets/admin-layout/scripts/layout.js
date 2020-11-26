@@ -36,5 +36,31 @@ $('#show').on('click', function () {
     $(this).hide();
 })
 
+var modal = document.getElementById('mymodal');
+	
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}  
+
+$('button').on('click', function(){
+$('button').removeClass('selected');
+$(this).addClass('selected');
+});
+
+
+
+
+
+
+type="text/javascript">
+function HandleBrowseClick(input_image)
+{
+    var fileinput = document.getElementById(input_image);
+    fileinput.click();
+}  
+
 
   

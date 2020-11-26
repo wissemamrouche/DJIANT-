@@ -3,7 +3,7 @@
 <!-- first let's start with the basics : headeres , title and scripts needed -->
 <head>
 <meta charset="utf-8"/>
-<title>Djiant Explorer</title>
+<title>Djiant D-Pages</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 
@@ -13,20 +13,30 @@
 <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <link href="toastr/css/toastr.css" rel="stylesheet"/>
 <script src="toastr/js/toastr.js"></script>
-<link rel="stylesheet" type="text/css" href="assets/global/css/toastr.css" />
-
-	
+<link rel="stylesheet" type="text/css" href="assets/global/css/toastr.css" />	
 <link href="assets/global/plugins/racine/racine.css" rel="stylesheet" type="text/css"/> 
 <script src="jquery/jquery.min.js"></script> 
-
 <link href="assets/global/css/components.css" id="style_components" rel="stylesheet" type="text/css"/>
 <link href="assets/global/css/plugins.css" rel="stylesheet" type="text/css"/>
 <link href="assets/admin-layout/css/layout.css" rel="stylesheet" type="text/css"/>
 <link href="assets/admin-layout/css/themes/darkblue.css" rel="stylesheet" type="text/css" id="style_color"/>
 <link href="assets/admin-layout/css/custom.css" rel="stylesheet" type="text/css"/>
-
 <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-<!-- END THEME STYLES -->
+<script src="assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+
+
+<!-- IMPORTANT! Load jquery-ui.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+<script src="assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<!-- END CORE PLUGINS -->
+<!-- BEGIN PAGE LEVEL PLUGINS -->
+<script src="assets/global/plugins/bootstrap-modal/js/bootstrap-modalmanager.js" type="text/javascript"></script>
+<script src="assets/global/plugins/bootstrap-modal/js/bootstrap-modal.js" type="text/javascript"></script>
+<script src="assets/global/plugins/racine/racine.js" type="text/javascript"></script>
+<!-- END PAGE LEVEL PLUGINS -->
+<!-- BEGIN PAGE LEVEL SCRIPTS -->
+<script src="assets/global/scripts/metronic.js" type="text/javascript"></script>
+<script src="assets/global/scripts/toastr.js" type="text/javascript"></script>
+<script src="assets\admin-layout\scripts\layout.js" type="text/javascript"></script>
 
 <link rel="icon" type="image/png" href="assets/image/logo-djiant.png" />
 </head><body class="page-header-fixed page-quick-sidebar-over-content page-full-width">
@@ -53,10 +63,10 @@
 		<div class="col-md-2 " style="margin-right: 40px;padding-left:1px;">
 			<div  class="  note-header">Emplacements</div>
 		</div>	
-		<div class="col-md-2" style="margin-right: 55px;">
+		<div class="col-md-3" style="margin-right: 55px;">
 			<div class=" note-header">Ressources</div>
 		</div>	
-		<div class="col-md-6 " style="margin-right: 40px;">
+		<div class="col-md-2 " style="margin-right: 40px;margin-left:20px;">
 			<div class=" note-header">Détails</div>
 		</div>	
 	</div>
@@ -86,59 +96,31 @@
 							<div class="portlet-body ">
 
 							<ul id="racine" >						
-				  			  <li  style="padding: 0px 0px;margin-bottom: 30px;margin-left:1px;" ><span class="racine racine-down ">Favoris</span>
+				  			  <li  style="padding: 0px 0px;margin-bottom: 30px;margin-left:1px;" ><span style="padding-left:12px;font-size: 14px;
+								font-weight: 600;font-family: calibri;">Publications</span>
 				  			  	<ul class="domaine active">
 				  			  		
-				  			  						      				<li id="1 "  class="domaine-list selected" >
-				      				 <img class="selected-img" src="images\Icon Network.svg" style=" width:22px; margin-right: 6px;" > Networks </li>  
-				      				
-				      							      				<li id="2 "  class="domaine-list " >
-				      				 <img class="" src="images\Icon Server.svg" style=" width:22px; margin-right: 6px;" > Servers </li>  
-				      				
-				      							      				<li id="3 "  class="domaine-list " >
-				      				 <img class="" src="images\Icon Business server.svg" style=" width:22px; margin-right: 6px;" > Business folders </li>  
+				  			  						      		
+									   <li id="1 "  class="domaine-list selected" onclick="toggle4('network');"  >
+										<img class="selected-img" src="images\Icon Nouveau.svg" style=" width:22px; margin-right: 6px;" > Nouveau </li>  
+									   
+																		 <li id="2 "  class="domaine-list " >
+										<img class="" src="images\Icon Publications$.svg" style=" width:22px; margin-right: 6px;" > Publications </li>  
+									   
+																		 <li id="3 "  class="domaine-list " >
+										<img class="" src="images\Icon Brouillons.svg" style=" width:22px; margin-right: 6px;" > Brouillons </li>  
+									   
+										<li id="3 "  class="domaine-list " >
+										 <img class="" src="images\Icon Corbeille.svg" style=" width:22px; margin-right: 6px;" > Corbeille </li>  
+										 <li id="3 "  class="domaine-list " >
+											 <img class="" src="images\Icon Rapport acativites.svg" style=" width:22px; margin-right: 6px;" > Rapport d'activités</li>  
 				      				
 				      							      				
 				      				
 				      			
    			   					</ul>
 								</li>
-								<li  style="padding: 0px 0px;margin-bottom: 30px;" ><span class="racine racine-down "> Publications</span>
-				  			  	<ul class="domaine active">
-				  			  		
-				  			  						      				<li id="1 "  class="domaine-list " onclick="toggle4('network');"  >
-				      				 <img class="" src="images\Icon Nouveau.svg" style=" width:22px; margin-right: 6px;" > Nouveau </li>  
-				      				
-				      							      				<li id="2 "  class="domaine-list " >
-				      				 <img class="" src="images\Icon Publications$.svg" style=" width:22px; margin-right: 6px;" > Publications </li>  
-				      				
-				      							      				<li id="3 "  class="domaine-list " >
-				      				 <img class="" src="images\Icon Brouillons.svg" style=" width:22px; margin-right: 6px;" > Brouillons </li>  
-				      				
-									   <li id="3 "  class="domaine-list " >
-										<img class="" src="images\Icon Corbeille.svg" style=" width:22px; margin-right: 6px;" > Corbeille </li>  
-										<li id="3 "  class="domaine-list " >
-											<img class="" src="images\Icon Rapport acativites.svg" style=" width:22px; margin-right: 6px;" > Rapport d'activités</li>  
-														
-				      				
-				      			
-   			   					</ul>
-								</li>
-								<li  style="padding: 0px 0px;margin-bottom: 30px;" ><span class="racine racine-down "> Compte</span>
-				  			  	<ul class="domaine active">
-				  			  		
-				  			  						      				<li id="1 "  class="domaine-list" >
-				      				 <img class="" src="images\Icon Mes donnes.svg " style=" width:22px; margin-right: 6px;" > Mes données personelles </li>  
-				      				
-				      							      				<li id="2 "  class="domaine-list " >
-				      				 <img class="" src="images\Icon Abonnements et factures.svg" style=" width:22px; margin-right: 6px;" > Abonnements et factures </li>  
-				      				
-				      				
-														
-				      		
-				      			
-   			   					</ul>
-				  			  </li>
+						
 							</ul>
 							
 							</div>
@@ -146,50 +128,549 @@
 						
 					</div>
 				<div id="network" >
-					<div class="col-md-2 " style="margin-left:40px;">
+					<div class="col-md-4 " style="margin-left:50px;">
 						<div class="portlet light  list-network">
 							<div class="portlet-body " >
-														<h4 class="main-network" >Publications Gratuites</h4>
-																	<a href="javascript:;" id="showa"  value="4" class="list-group-item "> <img style=" width:22px; margin-right: 6px;"  src="images\Icon Profil Entreprise.svg" > Profil de l'entreprise</a>
-																	<a href="javascript:;" id="showb"  value="5" class="list-group-item"> <img style=" width:22px; margin-right: 6px;" src="images\Icon Profil Perso.svg" > Profil personel</a>
-															<h4 class="communities-networks" >Publications avec abonnements</h4>
-																	<a href="javascript:;" value="1" class="list-group-item "> <img style=" width:22px; margin-right: 6px;" src="images\Icon Fiche produit.svg" > Fiche produit</a>
-																	<a href="javascript:;" value="2" class="list-group-item "> <img style=" width:22px; margin-right: 6px;" src="images\Icon Fiche service.svg" > Fiche service</a>
-																	<a href="javascript:;" value="3" class="list-group-item "> <img style=" width:22px; margin-right: 6px;" src="images\Icon Offre emploi.svg" > Offre d'emploi</a>
-																	<a href="javascript:;" value="26" class="list-group-item "> <img style=" width:22px; margin-right: 6px;" src="images\Icon Actualite.svg" > Actualité</a>
-																	<a href="javascript:;" value="28" class="list-group-item "> <img style=" width:22px; margin-right: 6px;" src="images\Icon Evenement.svg" > Evenement</a>
-																	<a href="javascript:;" value="1" class="list-group-item "> <img style=" width:22px; margin-right: 6px;" src="images\Icon Livre.svg" > Livre</a>
-																	<a href="javascript:;" value="2" class="list-group-item "> <img style=" width:22px; margin-right: 6px;" src="images\Icon Etude marche.svg" > Etude de marché</a>
-																	<a href="javascript:;" value="3" class="list-group-item "> <img style=" width:22px; margin-right: 6px;" src="images\Icon Business server.svg" > Spécial Education</a>
-																	<a href="javascript:;" value="26" class="list-group-item "> <img style=" width:22px; margin-right: 6px;" src="images\Icon Business server.svg" > Spécial TIC</a>
-																	<a href="javascript:;" value="28" class="list-group-item "> <img style=" width:22px; margin-right: 6px;" src="images\Icon Business server.svg" > Spécial Entrepreuneuriat</a>
-																	<a href="javascript:;" value="28" class="list-group-item "> <img style=" width:22px; margin-right: 6px;" src="images\Icon Business server.svg" > Spécial Announces classés</a>
+								<ul id="racine" >						
+									<li  style="padding: 0px 0px;margin-bottom:7px;margin-left:1px;" ><span href="#demo" data-toggle="collapse" class="racine racine-down" > Ressources web</span>
+										<ul class="domaine active" >
+											<div  id="demo" class="panel-collapse collapse ">
+												<ul class="nav navbar-nav" >
+													<li class="text-center">
+														<a class="a" 
+														 href="#"  data-toggle="collapse" onclick="toggle4('other');"  ><i>
+															<img  src="images\square (1).svg" style=" width:40px;" >
+
+														</i><br>Annuaire
+				                                        </a>
+													</li>
+													<li class="text-center">
+														<a class="a" href="#" onclick="toggle4('other');"  data-toggle="collapse"><i>
+															<img  src="images\square (1).svg" style=" width:40px;" >
+
+														</i><br>Blog<br>forum</a>
+													</li>
+													<li class="text-center">
+														<a class="a" href="#" onclick="toggle4('other');"  data-toggle="collapse"><i>
+															<img  src="images\square (1).svg" style=" width:40px;" >
+
+														</i><br>Catalogue <br>Ecommerce</a>
+													</li>
+													<li class="text-center">
+														<a class="a" href="#" onclick="toggle4('other');"  data-toggle="collapse" ><i>
+															<img  src="images\square (1).svg" style=" width:40px;" >
+
+														</i><br>Journal<br>portail</a>
+													</li>
+													<li class="text-center">
+														<a class="a"href="#" onclick="toggle4('other');"  data-toggle="collapse" ><i>
+															<img  src="images\square (1).svg" style=" width:40px;" >
+
+														</i><br>Page web</a>
+													</li>
+													<li class="text-center">
+														<a class="a"href="#"  onclick="toggle4('other');" data-toggle="collapse" ><i>
+															<img  src="images\square (1).svg" style=" width:40px;" >
+
+														</i><br>Réseau social</a>
+													</li>
+													<li class="text-center">
+														<a class="a" href="#" onclick="toggle4('other');"  data-toggle="collapse" ><i>
+															<img  src="images\square (1).svg" style=" width:40px;" >
+
+														</i><br>Site web</a>
+													</li>
+													
+													
+												
+												
+												</ul>
+											
+										</div>
+									</ul>
+										
+									</li>  
+
+									<li  style="padding: 0px 0px;margin-bottom:7px;margin-left:1px;" ><span class="racine racine-down " href="#demo1" data-toggle="collapse">Organisations</span>
+										<ul class="domaine active">
+											
+										<div id="demo1" class="panel-collapse collapse ">
+												<ul class="nav navbar-nav">
+													<li class="text-center">
+														<a class="a" 
+														 href="#"  onclick="toggle4('other');"  data-toggle="collapse" data-target="#one"><i>
+															<img  src="images\square (1).svg" style=" width:40px;" >
+
+														</i><br>Adminstration<br>publique
+				                                        </a>
+													</li>
+													<li class="text-center">
+														<a class="a" href="#"  onclick="toggle4('other');" data-toggle="collapse" data-target="#one"><i>
+															<img  src="images\square (1).svg" style=" width:40px;" >
+
+														</i><br>Association <br>professionelle</a>
+													</li>
+													<li class="text-center">
+														<a class="a" href="#" onclick="toggle4('other');"  data-toggle="collapse" data-target="#one"><i>
+															<img  src="images\square (1).svg" style=" width:40px;" >
+
+														</i><br>Collectivité</a>
+													</li>
+													<li class="text-center">
+														<a class="a" href="#" onclick="toggle4('other');"  data-toggle="collapse" data-target="#one"><i>
+															<img  src="images\square (1).svg" style=" width:40px;" >
+
+														</i><br>Ecole<br> supérieure</a>
+													</li>
+													<li class="text-center">
+														<a   onclick="toggle4('detail');" href="#" class="a" data-toggle="collapse" data-target="#one"><i>
+															<img  src="images\square (1).svg" style=" width:40px;" >
+
+														</i><br>Entreprise</a>
+													</li>
+													<li class="text-center">
+														<a   href="javascript:;" onclick="toggle4('other');"  value="5" class="a" data-toggle="collapse" data-target="#one"><i>
+															<img  src="images\square (1).svg" style=" width:40px;" >
+
+														</i><br>Equipe <br>de recherche</a>
+													</li>
+													<li class="text-center">
+														<a class="a" href="#" id="showb" onclick="toggle4('other');"   data-toggle="collapse" data-target="#one"><i>
+															<img  src="images\square (1).svg" style=" width:40px;" >
+
+														</i><br>Faculté</a>
+													</li>
+													<li class="text-center">
+														<a class="a" href="#" id="showb" onclick="toggle4('other');"   data-toggle="collapse" data-target="#one"><i>
+															<img  src="images\square (1).svg" style=" width:40px;" >
+
+														</i><br>Laboratoire <br> de recherche</a>
+													</li>
+													<li class="text-center">
+														<a  class="a" href="#"  id="showb" onclick="toggle4('other');"  data-toggle="collapse" data-target="#one"><i>
+															<img  src="images\square (1).svg" style=" width:40px;" >
+
+														</i><br>Université</a>
+													</li class="text-center">
+													<li class="text-center">
+														<a class="a" href="#" data-toggle="collapse"  onclick="toggle4('other');" data-target="#one"><i>
+															<img  src="images\square (1).svg" style=" width:40px;" >
+
+														</i><br>Agence<br>point de vente</a>
+													</li>
+												
+												</ul>
+											
+										</div>
+										</ul>
+									</li>   
+
+									<li  style="padding: 0px 0px;margin-bottom:7px;margin-left:1px;" ><span class="racine racine-down " href="#demo2" data-toggle="collapse" >Personnes</span>
+										<ul class="domaine active">
+											<div id="demo2" class="panel-collapse collapse ">
+												<ul class="nav navbar-nav">
+													<li class="text-center">
+														<a class="a" 
+														 href="#"  onclick="toggle4('other');"  data-toggle="collapse" data-target="#one"><i>
+															<img  src="images\square (1).svg" style=" width:40px;" >
+
+														</i><br>CV
+				                                        </a>
+													</li>
+													<li class="text-center">
+														<a class="a" onclick="toggle4('other');"  href="#" data-toggle="collapse" data-target="#one"><i>
+															<img  src="images\square (1).svg" style=" width:40px;" >
+
+														</i><br>Bibliographie</a>
+													</li>
+													<li class="text-center">
+														<a class="a" onclick="toggle4('other');"  href="#" data-toggle="collapse" data-target="#one"><i>
+															<img  src="images\square (1).svg" style=" width:40px;" >
+
+														</i><br>Profil Djiant</a>
+													</li>
+													<li class="text-center">
+														<a class="a" onclick="toggle4('other');"  href="#" data-toggle="collapse" data-target="#one"><i>
+															<img  src="images\square (1).svg" style=" width:40px;" >
+
+														</i><br>Profil Linkedln</a>
+													</li>
+												
+												
+												
+												</ul>
+											
+										</div>
+											
+										
+										</ul> 
+									</li>  
+
+									<li  style="padding: 0px 0px;margin-bottom:7px;margin-left:1px;" ><span class="racine racine-down " href="#demo3" data-toggle="collapse" > Publications standards</span>
+										<ul class="domaine active">
+											<div id="demo3" class="panel-collapse collapse ">
+												<ul class="nav navbar-nav">
+													<li class="text-center">
+														<a class="a" 
+														 href="#" onclick="toggle4('other');"   data-toggle="collapse" data-target="#one"><i>
+															<img  src="images\square (1).svg" style=" width:40px;" >
+
+														</i><br>Dépeche<br>Actualité
+				                                        </a>
+													</li>
+													<li class="text-center">
+														<a class="a" onclick="toggle4('other');"  href="#" data-toggle="collapse" data-target="#one"><i>
+															<img  src="images\square (1).svg" style=" width:40px;" >
+
+														</i><br>Evènement</a>
+													</li>
+													<li class="text-center">
+														<a class="a" onclick="toggle4('other');"  href="#" data-toggle="collapse" data-target="#one"><i>
+															<img  src="images\square (1).svg" style=" width:40px;" >
+
+														</i><br>Lancement commercial</a>
+													</li>
+													<li class="text-center">
+														<a class="a" onclick="toggle4('other');"  href="#" data-toggle="collapse" data-target="#one"><i>
+															<img  src="images\square (1).svg" style=" width:40px;" >
+
+														</i><br>Nomination</a>
+													</li>
+													<li class="text-center">
+														<a    href="javascript:;" onclick="toggle4('other');"  value="4" class="a" data-toggle="collapse" data-target="#one"><i>
+															<img  src="images\square (1).svg" style=" width:40px;" >
+
+														</i><br>Produit</a>
+													</li>
+													<li class="text-center">
+														<a   href="javascript:;" id="showb" onclick="toggle4('other');"  value="5" class="a" data-toggle="collapse" data-target="#one"><i>
+															<img  src="images\square (1).svg" style=" width:40px;" >
+
+														</i><br>Service</a>
+													</li>
+												
+												
+												
+												</ul>
+											
+										</div>
+										
+										</ul> 
+									</li>  
+
+									<li  style="padding: 0px 0px;margin-bottom:7px;margin-left:1px;" ><span class="racine racine-down " href="#demo4" data-toggle="collapse" >Emploi</span>
+										<ul class="domaine active">
+											<div id="demo4" class="panel-collapse collapse ">
+												<ul class="nav navbar-nav">
+													<li class="text-center">
+														<a class="a" 
+														 href="#" onclick="toggle4('other');"   data-toggle="collapse" data-target="#one"><i>
+															<img  src="images\square (1).svg" style=" width:40px;" >
+
+														</i><br>offre<br>d'emploi
+				                                        </a>
+													</li>
+													<li class="text-center">
+														<a class="a" href="#" onclick="toggle4('other');" data-toggle="collapse" data-target="#one"><i>
+															<img  src="images\square (1).svg" style=" width:40px;" >
+
+														</i><br>offre de <br>mission</a>
+													</li>
+													<li class="text-center">
+														<a class="a" href="#" onclick="toggle4('other');"  data-toggle="collapse" data-target="#one"><i>
+															<img  src="images\square (1).svg" style=" width:40px;" >
+
+														</i><br>offre de stage <br>alternance</a>
+													</li>
+													<li class="text-center">
+														<a class="a" href="#" onclick="toggle4('other');"  data-toggle="collapse" data-target="#one"><i>
+															
+
+														</i><br> <br></a>
+													</li>
+												
+												
+												
+													
+												
+												</ul>
+											
+										</div>
+										
+										</ul> 
+									</li>  
+
+									<li  style="padding: 0px 0px;margin-bottom:7px;margin-left:1px;" ><span class="racine racine-down " href="#demo5" data-toggle="collapse" >Education & savoir</span>
+										<ul class="domaine active">
+											<div id="demo5" class="panel-collapse collapse ">
+												<ul class="nav navbar-nav">
+													<li class="text-center">
+														<a class="a" 
+														 href="#" onclick="toggle4('other');"   data-toggle="collapse" data-target="#one"><i>
+															<img  src="images\square (1).svg" style=" width:40px;" >
+
+														</i><br>Base de<br>connaissance
+				                                        </a>
+													</li>
+													<li class="text-center">
+														<a class="a" onclick="toggle4('other');"  href="#" data-toggle="collapse" data-target="#one"><i>
+															<img  src="images\square (1).svg" style=" width:40px;" >
+
+														</i><br>Cours</a>
+													</li>
+													<li class="text-center">
+														<a class="a" onclick="toggle4('other');" href="#" data-toggle="collapse" data-target="#one"><i>
+															<img  src="images\square (1).svg" style=" width:40px;" >
+
+														</i><br>Thèse</a>
+													</li>
+													<li class="text-center">
+														<a class="a" onclick="toggle4('other');"  href="#" data-toggle="collapse" data-target="#one"><i>
+															<img  src="images\square (1).svg" style=" width:40px;" >
+
+														</i><br>Diplome</a>
+													</li>
+													<li class="text-center">
+														<a    href="javascript:;" onclick="toggle4('other');"  value="4" class="a" data-toggle="collapse" data-target="#one"><i>
+															<img  src="images\square (1).svg" style=" width:40px;" >
+
+														</i><br>Etude de<br>marché</a>
+													</li>
+													<li class="text-center">
+														<a   href="javascript:;" onclick="toggle4('other');"  id="showb"  value="5" class="a" data-toggle="collapse" data-target="#one"><i>
+															<img  src="images\square (1).svg" style=" width:40px;" >
+
+														</i><br>Formation</a>
+													</li>
+													<li class="text-center">
+														<a class="a" href="#" onclick="toggle4('other');"  data-toggle="collapse" data-target="#one"><i>
+															<img  src="images\square (1).svg" style=" width:40px;" >
+
+														</i><br>Livre</a>
+													</li>
+													<li class="text-center">
+														<a class="a" href="#" onclick="toggle4('other');"  data-toggle="collapse" data-target="#one"><i>
+															<img  src="images\square (1).svg" style=" width:40px;" >
+
+														</i><br>Livre blanc</a>
+													</li>
+													<li class="text-center">
+														<a  class="a" href="#" onclick="toggle4('other');"  data-toggle="collapse" data-target="#one"><i>
+															<img  src="images\square (1).svg" style=" width:40px;" >
+
+														</i><br>Tutorial</a>
+													</li class="text-center">
+									
+												
+												</ul>
+											
+										</div>
+										
+										</ul> 
+									</li>  
+
+								
+
+									<li  style="padding: 0px 0px;margin-bottom:7px;margin-left:1px;" ><span class="racine racine-down " href="#demo6" data-toggle="collapse" >Entrepreneunariat</span>
+										<ul class="domaine active">
+											<div id="demo6" class="panel-collapse collapse ">
+												<ul class="nav navbar-nav">
+													<li class="text-center">
+														<a class="a" 
+														 href="#" onclick="toggle4('other');"  data-toggle="collapse" data-target="#one"><i>
+															<img  src="images\square (1).svg" style=" width:40px;" >
+
+														</i><br>Fonds<br>d'investissement
+				                                        </a>
+													</li>
+													<li class="text-center">
+														<a class="a"  onclick="toggle4('other');" href="#" data-toggle="collapse" data-target="#one"><i>
+															<img  src="images\square (1).svg" style=" width:40px;" >
+
+														</i><br>Incubateur</a>
+													</li>
+													<li class="text-center">
+														<a class="a" onclick="toggle4('other');"  href="#" data-toggle="collapse" data-target="#one"><i>
+															<img  src="images\square (1).svg" style=" width:40px;" >
+
+														</i><br>Pépiniére</a>
+													</li>
+													<li class="text-center">
+														<a class="a"  onclick="toggle4('other');" href="#" data-toggle="collapse" data-target="#one"><i>
+															<img  src="images\square (1).svg" style=" width:40px;" >
+
+														</i><br>Pitch</a>
+													</li>
+													<li class="text-center">
+														<a    href="javascript:;" onclick="toggle4('other');"   value="4" class="a" data-toggle="collapse" data-target="#one"><i>
+															<img  src="images\square (1).svg" style=" width:40px;" >
+
+														</i><br>Projet<br>entrepreunarial</a>
+													</li>
+													<li class="text-center">
+														<a   href="javascript:;"  onclick="toggle4('other');" id="showb"  value="5" class="a" data-toggle="collapse" data-target="#one"><i>
+															<img  src="images\square (1).svg" style=" width:40px;" >
+
+														</i><br>Recherche de <br>co-fondateur</a>
+													</li>
+													<li class="text-center">
+														<a class="a" href="#" onclick="toggle4('other');"  data-toggle="collapse" data-target="#one"><i>
+															<img  src="images\square (1).svg" style=" width:40px;" >
+
+														</i><br>Réseau de <br> bussiness angels</a>
+													</li>
+													<li class="text-center">
+														<a class="a" href="#"  onclick="toggle4('other');" data-toggle="collapse" data-target="#one"><i>
+															<img  src="images\square (1).svg" style=" width:40px;" >
+
+														</i><br>Startup</a>
+													</li>
+												
+												
+												</ul>
+											
+										</div>
+										
+										</ul> 
+									</li>  
+
+									<li  style="padding: 0px 0px;margin-bottom:7px;margin-left:1px;" ><span class="racine racine-down " href="#demo7" data-toggle="collapse" >Opportunités d'affaires</span>
+										<ul class="domaine active">
+											<div  id="demo7" class="panel-collapse collapse ">
+												<ul class="nav navbar-nav">
+													<li class="text-center">
+														<a class="a" 
+														 href="#" onclick="toggle4('other');"   data-toggle="collapse" data-target="#one"><i>
+															<img  src="images\square (1).svg" style=" width:40px;" >
+
+														</i><br>Adminstration<br>publique
+				                                        </a>
+													</li>
+													<li class="text-center">
+														<a class="a" href="#" onclick="toggle4('other');"  data-toggle="collapse" data-target="#one"><i>
+															<img  src="images\square (1).svg" style=" width:40px;" >
+
+														</i><br>Appels à projet</a>
+													</li>
+													<li class="text-center">
+														<a class="a" href="#" onclick="toggle4('other');"  data-toggle="collapse" data-target="#one"><i>
+															<img  src="images\square (1).svg" style=" width:40px;" >
+
+														</i><br>Appel d'offres</a>
+													</li>
+													<li class="text-center">
+														<a class="a" href="#"  onclick="toggle4('other');" data-toggle="collapse" data-target="#one"><i>
+															<img  src="images\square (1).svg" style=" width:40px;" >
+
+														</i><br>Concours</a>
+													</li>
+													<li class="text-center">
+														<a    href="javascript:;" onclick="toggle4('other');"   value="4" class="a" data-toggle="collapse" data-target="#one"><i>
+															<img  src="images\square (1).svg" style=" width:40px;" >
+
+														</i><br>Entreprise à <br> céder</a>
+													</li>
+													<li class="text-center">
+														<a   href="javascript:;" id="showb" onclick="toggle4('other');"   value="5" class="a" data-toggle="collapse" data-target="#one"><i>
+															<img  src="images\square (1).svg" style=" width:40px;" >
+
+														</i><br>Offre<br>de partenariat</a>
+													</li>
+													<li class="text-center">
+														<a class="a" href="#" onclick="toggle4('other');"  data-toggle="collapse" data-target="#one"><i>
+															<img  src="images\square (1).svg" style=" width:40px;" >
+
+														</i><br>Reprise <br>d'entreprise</a>
+													</li>
+												
+												
+												</ul>
+											
+										</div>
+										
+										</ul> 
+									</li>  
+
+									<li  style="padding: 0px 0px;margin-bottom:7px;margin-left:1px;" ><span class="racine racine-down " href="#demo8" data-toggle="collapse" >Immobilier</span>
+										<ul class="domaine active">
+											<div id="demo8" class="panel-collapse collapse ">
+												<ul class="nav navbar-nav">
+													<li class="text-center">
+														<a class="a" 
+														 href="#" onclick="toggle4('other');"   data-toggle="collapse" data-target="#one"><i>
+															<img  src="images\square (1).svg" style=" width:40px;" >
+
+														</i><br>Appartement
+				                                        </a>
+													</li>
+													<li class="text-center">
+														<a class="a" href="#"  onclick="toggle4('other');" data-toggle="collapse" data-target="#one"><i>
+															<img  src="images\square (1).svg" style=" width:40px;" >
+
+														</i><br>Bureau</a>
+													</li>
+													<li class="text-center">
+														<a class="a" href="#" onclick="toggle4('other');"  data-toggle="collapse" data-target="#one"><i>
+															<img  src="images\square (1).svg" style=" width:40px;" >
+
+														</i><br>Entrepot</a>
+													</li>
+													<li class="text-center">
+														<a class="a" href="#" onclick="toggle4('other');"  data-toggle="collapse" data-target="#one"><i>
+															<img  src="images\square (1).svg" style=" width:40px;" >
+
+														</i><br>Maison</a>
+													</li>
+												
+													<li class="text-center">
+														<a   href="javascript:;" id="showb"  onclick="toggle4('other');"  value="5" class="a" data-toggle="collapse" data-target="#one"><i>
+															<img  src="images\square (1).svg" style=" width:40px;" >
+
+														</i><br>Terrain</a>
+													</li>
+												
+												
+												</ul>
+											
+										</div>
+										
+										</ul> 
+									</li>  
+
+									
+											
+																	
+																	
+									</ul>					
 
 															</div>
 						</div>
 					</div>
-						<!-- I did 2 exemples to illustrate the transition between "profil entreprise" et "profil coollaborateur"-->
-						<div class="col-md-7 " style="margin-left:55px;" id = "a" class="collapse"  style="display:none;">
+						<!-- I did  an exemple to illustrate the transition between "profil entreprise" -->
+						<div class="col-md-5 "  id="detail" style="margin-left:55px; display:none;"  class="collapse "  >
 							<div class="portlet light details-network">								
 							<div class="portlet-body " style="padding-top: 0px;">
 															<div class="thumbnail">
-											<img width="50%" style="margin-left: 130px;" src="images\Icon Profil Entreprise.svg"> 
+											<img width="50%" src="images/Icon Profil Entreprise.svg" style="margin-left:105px;margin-top:15px;"> 
 								<p style="text-align: right;">
 																	
 						
 								</div>
 									
-								<form class="details-form form-horizontal"  style="margin-left: 45px;">
-								<div class="form-group ">
-									<label class="col-md-2 control-label">Type </label>
-									 <div class="col-md-6">entreprise</div>
+								<form class="details-form form-horizontal"  style="margin-left: 45px;margin-top:14px;" >
+								<div class="form-group  " > 
+									<label class="col-md-2 control-label">Type</label>
+									 <div class="col-md-6" style="margin-top:5px;">
+										 Profil de l'entreprise
+
+									 </div>
 								</div>
-								<div class="form-group">
+								<div class="form-group ">
 									<label class="col-md-2 control-label ">Description </label>
-									 <div class="col-md-4">utiliser ce modéle de document pour présenter et promouvoir une entreprise ou toute autre type d'entreprise </div>
+									 <div class="col-md-5" style="margin-top:5px;">utiliser ce modéle de document pour présenter et promouvoir une entreprise ou toute autre type d'entreprise </div>
 								</div>
 							
-								<button  class="btn btn-sm default" style="margin-left:110px;"  data-toggle="modal" data-target="#mymodal" >Créer </button>
+								<button  class="btn btn-sm default" style="margin-left:81px;width:60px;height:40px;"  data-toggle="modal" data-target="#mymodal" >Créer </button>
 							
 								</form>
 									
@@ -198,683 +679,683 @@
 						</div>
 						
 			<!-- END DASHBOARD STATS -->
-		</div>
+		</div> 
+		<div id="other"></div>
 	</div>
 	<!-- END CONTENT -->
 </div>
 
-
-<script src="assets/global/plugins/jquery.min.js" type="text/javascript"></script>
-
-
-<!-- IMPORTANT! Load jquery-ui.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
-<script src="assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-<!-- END CORE PLUGINS -->
-<!-- BEGIN PAGE LEVEL PLUGINS -->
-<script src="assets/global/plugins/bootstrap-modal/js/bootstrap-modalmanager.js" type="text/javascript"></script>
-<script src="assets/global/plugins/bootstrap-modal/js/bootstrap-modal.js" type="text/javascript"></script>
-<script src="assets/global/plugins/racine/racine.js" type="text/javascript"></script>
-<!-- END PAGE LEVEL PLUGINS -->
-<!-- BEGIN PAGE LEVEL SCRIPTS -->
-<script src="assets/global/scripts/metronic.js" type="text/javascript"></script>
-<script src="assets/global/scripts/toastr.js" type="text/javascript"></script>
-<script src="assets\admin-layout\scripts\layout.js" type="text/javascript"></script>
-
-<!-- END PAGE LEVEL SCRIPTS -->
-
-<!-- END JAVASCRIPTS -->
 <!-- start of the first modal popup-->
 <div class="container">
-	<div  class="modal " id="mymodal" data-backdrop="false" tabindex="-1" role="dialog"> 
-		<div class="modal-dialog modal-lg modal-dialog-scrollable"
+	<div  class="modal " id="mymodal" data-backdrop="false" tabindex="-1"> 
+		<div class="modal-dialog-scrollable" style="   width: 100%;
+		height: 100%;
+		margin: 0;
+		padding: 0;
+		max-width: none;
+		"
 		> 
-			<div class="modal-content">
-				<div class="modal-header">
-					<div class="page-logo">
-						<img style="margin-right: 6px;" src="images\Icon Logo Djiant.svg" width="22px"> <span class=" note"> 
-						</span><img style="margin-right: 6px;" src="images\Icon D Pages.svg" width="22px"> 
-						D - pages | Nouveau (orgnanisation)
-					</div>
-				</div>
-					<div style="border-bottom: solid 1px #ddd;
-					">
-						<div style="padding:5px;">
-						<button  id="publier" class="btn btn-sm default" style="margin-left:10px;" data-toggle="modal" data-target="#mymodal1">Publier sous ...</button>
-						<button  class="btn btn-sm default" >Visualiser</button>
-						<button class="btn btn-sm default" >Annuler</button>
-						</div>
-					</div>
-				
-		<style>
-	     button#publier:active
-{
-	background:#383838;
-	color:white;
-}
-button#publier:focus
-{
-	background:#383838;
-	color:white;
-}
-.line {
-  width: 80px;
-  height: 1px;
-  border: none;
-  border-radius:10px;
-  background: linear-gradient(to right,black,white);
-  
-margin: 5px;
-display:inline-block;
-}
- 
-
-		</style>
+			<div class="modal-content" style=" height: auto;
+			min-height: 100%;
+			border-radius: 0;
+			border: none;
 		
+			">
+			    
+				<div class="page-header -i navbar navbar-fixed-top">
+					<!-- BEGIN HEADER INNER -->
+					<div class="page-header-inner">
+						<!-- BEGIN LOGO -->
+						<div class="page-logo">
+							<img style="margin-right: 3px;" src="images\Icon Logo Djiant.svg" width="22px"> <span class=" note"> 
+							</span><img style="margin-right: 6px;" src="images\Icon D Pages.svg" width="22px"> 
+							D - pages | Nouveau(Organisation) 
+						</div>
+						
+					
+					</div>
+					<!-- END HEADER INNER -->
+				</div>
+				<div class="page-header -i navbar navbar-fixed-top" style="margin-top: 40px;">
+					<!-- BEGIN HEADER INNER -->
+					<div class="page-header-inner">
+							
+						<div 
+						>
+							<div >
+							<button  id="publier"  class="btn btn-md default" style=" border: 1px solid white;margin-right:0px!important;" data-toggle="modal" data-target="#mymodal1">Publier sous</button>
+							<button style="border: 1px solid white;"  class="btn btn-md default" >Visualiser</button>
+							<button style="border: 1px solid white;" class="btn btn-md default"  data-dismiss="modal">Abandonner</button>
+							</div>
+						</div> 
+					</div>
+					<!-- END HEADER INNER -->
+				</div>
+				<!-- start of modal form-->
 
-			<hr class="modal-body">
-
-			 <!-- start of the form--> 
+			<div class="modal-body" style="widows:100px;height:70%;margin-top:1px;background-color:#F8F8F8"> 
+					 <!-- start of the form--> 
 			
-				<form role="form" class='form-horizontal'>
-					<!-- image place --> 
-					<div class="row">
-						<div class="col-md-2"></div>
-						<div class="col-md-8"> 
-							<div class="form-group">
-								<div class="col-xs-6 text-right"></div>
-								<div class="col-xs-6">
-									<div class="form-group">
-										<div class="col-xs-6 text-right">
-											<img id="image-preview" style="width:150px; height:150px;"src="" >
-
-											<input style="display:none" id="input-image-hidden" onchange="document.getElementById('image-preview').src = window.URL.createObjectURL(this.files[0])" type="file" accept="image/jpeg, image/png">
-											
-										</div>
-										<div class="col-xs-6">
-											<button class="btn btn-sm default" style="height:20px;margin-left:1px; background-color: white;" onclick="HandleBrowseClick('input-image-hidden');" ></button>
-											<label style=" white-space :nowrap;  text-overflow: ellipsis;" for="cpTitle">Télecharger image</label>
-										</div>
-									</div>
-									 <!--<img style="border:1px solid #e5e5e5; margin-bottom:10px;" class="img-thumbnail"  width="304" height="200"> --> 
+					 <form role="form" style="
+				box-shadow: 4px 2px 5px 0px rgba(243,241,241,0.75);
+		-webkit-box-shadow: 4px 2px 5px 0px rgba(243,241,241,0.75);
+		-moz-box-shadow: 4px 2px 5px 0px rgba(243,241,241,0.75);
+					 background-color:white;width:900px;height:1800px; margin-top:90px;margin-left:30px;box-sizing: border-box;
+					 border: 1px solid transparent;
+					 border-radius: 4px;
+					 " class='form-horizontal'>
+						<div style="display:inline-block; margin-left:70px;margin-top:50px;margin-bottom:15px; ">
+							<h4>
+								Génériques
+							</h4>
+						</div>
+					
+						<!-- image place --> 
+						<div class="row">
+							
+							<div class="col-md-11"> 
+								<div class="form-group row">
+									<div class="col-xs-4"></div>
+									<div class="col-xs-6" style="margin-left:67px;padding-left:14px; " >
 									
-
+											
+											<div class="col-xs-6"style="width:200px; height:160px;   border: 1px solid #f2f2f2;" >
+												
+	                                            
+												<input style="display:none" id="input-image-hidden" onchange="document.getElementById('image-preview').src = window.URL.createObjectURL(this.files[0])" type="file" accept="image/jpeg, image/png">
+												
+											</div>
+											<div class="col-md-6">
+												<img  src="images\square (1).svg" style=" width:30px;" >
+												<label style=" white-space :nowrap;  text-overflow: ellipsis; font-weight:400;" for="cpTitle">Télecharger Une image</label><br>
+												<!-- <button class="btn btn-sm default" style="height:25px;width:30px;; background-color: white;" onclick="HandleBrowseClick('input-image-hidden');" ></button>-->
+												<img  src="images\square (1).svg" style=" width:30px;" >
+												<label style=" white-space :nowrap;  text-overflow: ellipsis;font-weight: 400;" for="cpTitle">Supprimer  Une image</label>
+												
+											</div>
+										</div>
+										
+						</div>
+	
+					</div>
+						
+	
+	</div>
+	              
+					
+					
+					<!-- the start of identité -->
+					
+				
+	
+	
+					
+						
+						<div class="row">
+							
+							<div class="col-md-11"> 
+								<div class="form-group">
+									
+									<div class="col-xs-5 text-right">
+										<label for="cpTitle">Type</label>
+									</div>
+									<div class="col-xs-6">
+										<input  style="background-color:#f3f3f3;"type="text" class="form-control" placeholder="Organisation" id="cpTitle" />
+									</div>
+									<div class="col-xs-1">
+									
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-xs-5 text-right">
+										<label  for="cpTitle">Sous-Type</label>
+									</div>
+									<div class="col-xs-6">
+										<select style="background-color:#f3f3f3;"  class="form-control">
+											<option value="mypodcast" data-class="podcast">Entreprise</option>
+											
+										  </select>
+										  
+									</div>
+									<div class="col-xs-1">
+									
+									</div>
+								</div>
+	
+								
+								<div class="form-group">
+									<div class="col-xs-5 text-right">
+										<label for="cpTitle">Description</label>
+									</div>
+									<div class="col-xs-6">
+										<input type="text" class="form-control" id="cpTitle" />
+									</div>
+									<div class="col-xs-1" style="padding-left:0px !important;">
+										<img  src="images\Icon3points.svg" width="25px" height="30px;"> 
+									</div>
+								</div>
+	
+							
+								<div class="form-group">
+									<div class="col-xs-5 text-right">
+										<label for="cpTitle">Activité</label>
+									</div>
+									<div class="col-xs-6">
+										<input type="text" class="form-control" id="cpTitle" />
+									</div>
+									<div class="col-xs-1">
+									
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-xs-5 text-right">
+										<label for="cpTitle">Mots clés</label>
+									</div>
+									<div class="col-xs-6">
+										<input type="text" class="form-control" id="cpTitle" />
+									</div>
+									<div class="col-xs-1">
+									
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-xs-5 text-right">
+										<label for="cpTitle">Site web</label>
+									</div>
+									<div class="col-xs-6">
+										<input type="text" class="form-control" id="cpTitle" />
+									</div>
+									<div class="col-xs-1" style="padding-left:0px !important;">
+										<img src="images\square (1).svg" width="25px" height="30px;"> 
+									</div>
+								</div>
+							
+						</div>
+						<div class="col-md-2"></div> 
+	
+					
+						
+	
+					</div>
+					
+	
+			<!-- start of Spécifiques--> 
+			  
+			<div style="display:inline-block;margin-left:70px;margin-top:50px;margin-bottom:15px; ">
+				<h4>
+					Spécifiques
+				</h4>
+			</div>
+			
+					<div class="row">
+						
+						<div class="col-md-11"> 
+							<div class="form-group">
+								<div class="col-xs-5 text-right">
+									<label for="cpTitle">Champs d'activités</label>
+								</div>
+								<div class="col-xs-6">
+									<input type="text" class="form-control" id="cpTitle" placeholder="">
+								</div>
+								<div class="col-xs-1">
+									
 								</div>
 							</div>
-
-							
-
-						
-
+							<div class="form-group">
+								<div class="col-xs-5 text-right">
+									<label for="cpTitle">Champs d'activités</label>
+								</div>
+								<div class="col-xs-6">
+									<input type="text" class="form-control" id="cpTitle" placeholder="">
+								</div>
+								<div class="col-xs-1">
+									
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-xs-5 text-right">
+									<label for="cpTitle">Champs d'activités</label>
+								</div>
+								<div class="col-xs-6">
+									<input type="text" class="form-control" id="cpTitle" placeholder="">
+								</div>
+								<div class="col-xs-1">
+									
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-xs-5 text-right">
+									<label for="cpTitle">Champs d'activités</label>
+								</div>
+								<div class="col-xs-6">
+									<input type="text" class="form-control" id="cpTitle" placeholder="">
+								</div>
+								<div class="col-xs-1">
+									
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-xs-5 text-right">
+									<label for="cpTitle">Champs d'activités</label>
+								</div>
+								<div class="col-xs-6">
+									<input type="text" class="form-control" id="cpTitle" placeholder="">
+								</div>
+								<div class="col-xs-1">
+									
+								</div>
+							</div>
+	
+	
 							
 						
 					</div>
-					<div class="col-md-2">
-						
-					</div> 
-
+					<div class="col-md-2"></div> 
+	
 				
 					
-
+	
 				</div>
-
+	
+				<!-- start of source-->
 				
-				
-				<!-- the start of identité -->
-				
-		    
-<div style="display:inline-block; margin-left:20px;">
-	<h4>
-		Identité
-	</h4>
-</div>
-<hr class="line">
-
-		        
-					
+				<div style="display:inline-block; margin-left:70px;margin-top:50px;margin-bottom:15px; ">
+					<h4>
+						Source
+					</h4>
+				</div>
+				  
 					<div class="row">
-						<div class="col-md-2">
-						
-						</div>
-						<div class="col-md-8"> 
+						<div class="col-md-11"> 
 							<div class="form-group">
-								<div class="col-xs-6 text-right">
-									<label for="cpTitle">Type</label>
+								<div class="col-xs-5 text-right">
+									<label for="cpTitle">Organisation d'entreprise</label>
 								</div>
 								<div class="col-xs-6">
-									<input type="text" class="form-control" placeholder="Organisation" id="cpTitle" />
+									<input type="text" class="form-control" id="cpTitle" placeholder="">
+								</div>
+								<div class="col-xs-1">
+									
 								</div>
 							</div>
-
+	
+	
 							<div class="form-group">
-								<div class="col-xs-6 text-right">
-									<label for="cpTitle">Sous-type</label>
-								</div>
-								<div class="col-xs-6">
-									<select id="inputState" class="form-control">
-										<option selected>Entreprise</option>
-										<option>...</option>
-									  </select>
-								</div>
-							</div>
-
-							<div class="form-group">
-								<div class="col-xs-6 text-right">
-									<label for="cpTitle">Nom de l'orgnanisation</label>
-								</div>
-								<div class="col-xs-6">
-									<input type="text" class="form-control"  id="cpTitle" />
-								</div>
-							</div>
-
-							<div class="form-group">
-								<div class="col-xs-6 text-right">
-									<label for="cpTitle">Site web</label>
+								<div class="col-xs-5 text-right">
+									<label for="cpTitle">Website</label>
 								</div>
 								<div class="col-xs-6">
 									<input type="text" class="form-control" id="cpTitle" />
 								</div>
+								<div class="col-xs-1">
+									
+								</div>
 							</div>
+	
+							<div class="form-group">
+								<div class="col-xs-5 text-right">
+									<label for="cpTitle">Djiant page</label>
+								</div>
+								<div class="col-xs-6">
+									<input type="text" class="form-control"  id="cpTitle" />
+								</div>
+								<div class="col-xs-1">
+									
+								</div>
+							</div>
+	
+							
+	
+						
 						
 					</div>
 					<div class="col-md-2"></div> 
-
+	
 				
 					
-
+	
 				</div>
-				<!-- presentation /cas spécial-->
-				<div class="row">
-					<div class="col-md-2"></div>
-					<div class="col-md-8"> 
-						<div class="form-group">
-							<div class="col-xs-6 text-right">
-								<label for="cpTitle">Présentation</label>
-							</div>
-							<div class="col-xs-6">
-								<input type="text" class="form-control"  id="cpTitle" />
-							</div>
-						</div>
-
+	
+				<!-- start of localisation-->
+				
+				<div style="display:inline-block; margin-left:70px;margin-top:50px; margin-bottom:15px;">
+					<h4>
+						Localisation
+					</h4>
+				</div>
+				
+					<div class="row">
 						
-					
-				</div>
-				<div class="col-xs-2">
-					<svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-three-dots" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-						<path fill-rule="evenodd" d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
-					  </svg>
-				</div> 
-
-			
-				
-
-			</div> 
-
-		<!-- start of activité--> 
-		  
-		<div style="display:inline-block; margin-left:20px;">
-			<h4>
-				Activité 
-			</h4>
-		</div>
-		<hr class="line">
-				<div class="row">
-					<div class="col-md-2"></div>
-					<div class="col-md-8"> 
-						<div class="form-group">
-							<div class="col-xs-6 text-right">
-								<label for="cpTitle">Type d'activités</label>
-							</div>
-							<div class="col-xs-6">
-								<select id="cpTitle" class="form-control">
-									<option  selected  > <i class="fa fa-arrow-right"></i>Fabricant </option>
+						<div class="col-md-11"> 
+							<div class="form-group">
+								<div class="col-xs-5 text-right">
+									<label for="cpTitle">Adresse ligne 1</label>
+								</div>
+								<div class="col-xs-6">
+									<input type="text" class="form-control"  id="cpTitle" >
+								</div>
+								<div class="col-xs-1">
 									
-									<option>...</option>
-								  </select>
+								</div>
 							</div>
-						</div>
-
-						<div class="form-group">
-							<div class="col-xs-6 text-right">
-								<label for="cpTitle">Code Naf</label>
+							<div class="form-group">
+								<div class="col-xs-5 text-right">
+									<label for="cpTitle">Adresse ligne 2</label>
+								</div>
+								<div class="col-xs-6">
+									<input type="text" class="form-control"  id="cpTitle"  >
+								</div>
+								<div class="col-xs-1">
+									
+								</div>
 							</div>
-							<div class="col-xs-6">
-								<input type="text" class="form-control" id="cpTitle" placeholder="61-Activités informatiques">
+							<div class="form-group">
+								<div class="col-xs-5 text-right">
+									<label for="cpTitle">Adresse ligne 3</label>
+								</div>
+								<div class="col-xs-6">
+									<input type="text" class="form-control"  id="cpTitle"  >
+								</div>
+								<div class="col-xs-1">
+									
+								</div>
 							</div>
-						</div>
-
-						
-					
-				</div>
-				<div class="col-md-2"></div> 
-
-			
-				
-
-			</div>
-			<!-- presentation /cas spécial-->
-			<div class="row">
-				<div class="col-md-2"></div>
-				<div class="col-md-8"> 
-					<div class="form-group">
-						<div class="col-xs-6 text-right">
-							<label for="cpTitle">Description</label>
-						</div>
-						<div class="col-xs-6">
-							<input type="text" class="form-control" id="cpTitle" />
-						</div>
-					</div>
-
-					
-				
-			</div>
-			<div class="col-md-2">
-				<svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-three-dots" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-					<path fill-rule="evenodd" d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
-				  </svg>
-			</div> 
-
-		
-			
-
-			</div> 
-				<!-- presentation /cas spécial-->
-				<div class="row">
-					<div class="col-md-2"></div>
-					<div class="col-md-8"> 
-						<div class="form-group">
-							<div class="col-xs-6 text-right">
-								<label for="cpTitle">Mots clés</label>
+	
+							<div class="form-group">
+								<div class="col-xs-5 text-right">
+									<label for="cpTitle">code postal</label>
+								</div>
+								<div class="col-xs-2">
+									<input type="text" class="form-control"  id="cpTitle" >
+								</div>
+								<div class="col-xs-4" style="margin-left:5px;">
+									<div class="col-xs-2"><label for="cpTitle">Ville</label></div>
+								    <div class="col-xs-10">
+										<input type="text" class="form-control"  id="cpTitle"  >
+									</div>
+									
+								</div>
+								
 							</div>
-							<div class="col-xs-6">
-								<input type="text" class="form-control"  id="cpTitle" />
+							<div class="form-group">
+								<div class="col-xs-5 text-right">
+									<label for="cpTitle">Région, Province</label>
+								</div>
+								<div class="col-xs-6">
+									<input type="text" class="form-control"  id="cpTitle"  >
+								</div>
+								<div class="col-xs-1">
+									
+								</div>
 							</div>
-						</div>
+							<div class="form-group">
+								<div class="col-xs-5 text-right">
+								</div>
+								<div class="col-xs-6">
+									<div class="col-xs-9"></div>
+									<div class="col-xs-2">
+										<button style="border: 2px solid white;  border-radius: 25px; "  class="btn btn-md default"  >Géolocaliser</button></div>
+								</div>
+								<div class="col-xs-1">
+									
+								</div>
+							</div>
+	
+							
+	
+							
+	
+							
 	
 						
+						
+					</div>
+					<div class="col-md-2"></div> 
+	
+				
 					
+	
 				</div>
-				<div class="col-md-2">
-					<svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-three-dots" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-						<path fill-rule="evenodd" d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
-					  </svg>
-				</div> 
+
+				<!-- start of communication-->
+				
+				<div style="display:inline-block; margin-left:70px;margin-top:50px;margin-bottom:15px;">
+					<h4>
+						Communication
+					</h4>
+				</div>
+				
+					<div class="row">
+						
+						<div class="col-md-11"> 
+							<div class="form-group">
+								<div class="col-xs-5 text-right">
+									<label for="cpTitle">Téléphone</label>
+								</div>
+								<div class="col-xs-6">
+									<input type="text" class="form-control"  id="cpTitle" >
+								</div>
+								<div class="col-xs-1">
+									
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-xs-5 text-right">
+									<label for="cpTitle">Adresse mail </label>
+								</div>
+								<div class="col-xs-6">
+									<input type="text" class="form-control"  id="cpTitle" >
+								</div>
+								<div class="col-xs-1"style="padding-left:0px !important;">
+									<img  src="images\Icon3points.svg" width="25px" height="30px;"> 
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-xs-5 text-right">
+									<label for="cpTitle">........</label>
+								</div>
+								<div class="col-xs-6">
+									<input type="text" class="form-control"  id="cpTitle" >
+								</div>
+								<div class="col-xs-1">
+								
+								</div>
+							</div>
+	
+							<div class="form-group">
+								<div class="col-xs-5 text-right">
+									<label for="cpTitle">........</label>
+								</div>
+								<div class="col-xs-6">
+									<input type="text" class="form-control"  id="cpTitle" >
+								</div>
+								<div class="col-xs-1">
+									
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-xs-5 text-right">
+									<label for="cpTitle">........</label>
+								</div>
+								<div class="col-xs-6">
+									<input type="text" class="form-control"  id="cpTitle" >
+								</div>
+								<div class="col-xs-1">
+									
+								</div>
+							</div>
+	
+							
+	
+							
+	
+							
+	
+						
+						
+					</div>
+					<div class="col-md-2"></div> 
+	
+				
+					
+	
+				</div>
+				
+				
+			  
 	
 			
 				
-	
-				</div> 
-					<!-- presentation /cas spécial-->
-			<div class="row">
-				<div class="col-md-2"></div>
-				<div class="col-md-8"> 
-					<div class="form-group">
-						<div class="col-xs-6 text-right">
-							<label for="cpTitle">Marques </label>
-						</div>
-						<div class="col-xs-6">
-							<input type="text" class="form-control"  id="cpTitle" />
-						</div>
-					</div>
-
-					
-				
-			</div>
-			<div class="col-md-2">
-				<svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-three-dots" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-					<path fill-rule="evenodd" d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
-				  </svg>
-			</div> 
-
-		
-			
-
-			</div> 
-
-			<div class="row">
-				<div class="col-md-2"></div>
-				<div class="col-md-8"> 
-					<div class="form-group">
-						<div class="col-xs-6 text-right">
-							<label for="cpTitle">Tranche d'effectif</label>
-						</div>
-						<div class="col-xs-6">
-							<select id="cpTitle" class="form-control">
-								<option selected> 11-50</option>
-								<option>...</option>
-							  </select>
-						</div>
-					</div>
-
-					
-				
-			</div>
-			<div class="col-md-2"></div> 
-
-		
-			
-
-			</div> 
-
-			<!-- start of localisation-->
-			
-			<div style="display:inline-block; margin-left:20px;">
-				<h4>
-					Localisation
-				</h4>
-			</div>
-			<hr class="line">
-				<div class="row">
-					<div class="col-md-2"></div>
-					<div class="col-md-8"> 
-						<div class="form-group">
-							<div class="col-xs-6 text-right">
-								<label for="cpTitle">Pays</label>
-							</div>
-							<div class="col-xs-6">
-								<select id="cpTitle" class="form-control">
-									<option selected>France</option>
-									<option>...</option>
-								  </select>
-							</div>
-						</div>
-
-						<div class="form-group">
-							<div class="col-xs-6 text-right">
-								<label for="cpTitle">Region-province</label>
-							</div>
-							<div class="col-xs-6">
-								<select id="inputState" class="form-control">
-									<option selected>Region sud</option>
-									<option>...</option>
-								  </select>
-							</div>
-						</div>
-
-						<div class="form-group">
-							<div class="col-xs-6 text-right">
-								<label for="cpTitle">Code postal</label>
-							</div>
-							<div class="col-xs-6">
-								<input type="text" class="form-control" id="cpTitle" />
-							</div>
-						</div>
-
-						<div class="form-group">
-							<div class="col-xs-6 text-right">
-								<label for="cpTitle">Ville</label>
-							</div>
-							<div class="col-xs-6">
-								<input type="text" class="form-control"  id="cpTitle" />
-							</div>
-						</div>
-
-						<div class="form-group">
-							<div class="col-xs-6 text-right">
-								<label for="cpTitle">Adresse(Ligne1)</label>
-							</div>
-							<div class="col-xs-6">
-								<input type="text" class="form-control"  id="cpTitle" />
-							</div>
-						</div>
-
-						<div class="form-group">
-							<div class="col-xs-6 text-right">
-								<label for="cpTitle">Adresse(Ligne2)</label>
-							</div>
-							<div class="col-xs-6">
-								<input type="text" class="form-control"  id="cpTitle" />
-							</div>
-						</div>
-						<div class="form-group">
-							<div class="col-xs-6 text-right">
-								<label for="cpTitle">Adresse(Ligne3)</label>
-							</div>
-							<div class="col-xs-6">
-								<input type="text" class="form-control"  id="cpTitle" />
-							</div>
-						</div>
-
 					
 					
+				</form>
 				</div>
-				<div class="col-md-2"></div> 
-
 			
 				
-
-			</div>
-
-			<!-- start of communication-->
+              
 			
-			<div style="display:inline-block; margin-left:20px;">
-				<h4>
-					Communication
-				</h4>
-			</div>
-			<hr class="line">
-				<div class="row">
-					<div class="col-md-2"></div>
-					<div class="col-md-8"> 
-						<div class="form-group">
-							<div class="col-xs-6 text-right">
-								<label for="cpTitle">Télephone</label>
-							</div>
-							<div class="col-xs-6">
-								<input type="text" class="form-control"  id="cpTitle"  placeholder="0 33 0">
-							</div>
-						</div>
-
-						<div class="form-group">
-							<div class="col-xs-6 text-right">
-								<label for="cpTitle">Courrier Electornique</label>
-							</div>
-							<div class="col-xs-6">
-								<select id="inputState" class="form-control">
-									<option selected>Entreprise</option>
-									<option>...</option>
-								  </select>
-							</div>
-						</div>
-
-						
-
-						
-
-						
-
-					
-					
-				</div>
-				<div class="col-md-2"></div> 
-
-			
-				
-
-			</div>
-			<!-- presentation /cas spécial-->
-			<div class="row">
-				<div class="col-md-2"></div>
-				<div class="col-md-8"> 
-					<div class="form-group" style="margin-bottom:40px;">
-						<div class="col-xs-6 text-right">
-							<label for="cpTitle">Réseaux sociaux </label>
-						</div>
-						<div class="col-xs-6">
-							<input type="text" class="form-control"  id="cpTitle" />
-						</div>
-					</div>
-
-					
-				
-			</div>
-			<div class="col-md-2">
-				<svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-three-dots" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-					<path fill-rule="evenodd" d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
-				  </svg>
-			</div> 
-
-		
-			
-
-			</div> 
-			
-			
-		  
-
-		
-			
-				
-				
-			</form>
 			</div>
 			</div>
 
 		</div>
 		
-	</div>
+</div>
+
 
 
 </div>
 <div class="container">
 	<div  class="modal " id="mymodal1" data-backdrop="false" tabindex="-1" role="dialog"> 
-		<div class="modal-dialog modal-lg modal-dialog-scrollable" style="margin-top:107px;margin-left:213px;margin-bottom:100px;"
+		<div class="modal-dialog modal-lg modal-dialog-scrollable" style="margin-top:80px;margin-left:39px;margin-bottom:100px; 	box-shadow: 9px 2px 5px 0px rgba(243,241,241,0.75);
+		-webkit-box-shadow: 9px 2px 5px 0px rgba(243,241,241,0.75);
+		-moz-box-shadow: 9px 2px 5px 0px rgba(243,241,241,0.75);"
 		> 
 			<div class="modal-content">
-				<div class="modal-header">
+				<div class="modal-header" style="border-bottom:white !important;padding-left:5px !important;padding-bottom:0px!important;scroll-padding-top:3px ! important;">
 					<div class="page-logo" style="display: inline-flex; align-items: center;">
-						<svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-square" fill="#e5e5e5" xmlns="http://www.w3.org/2000/svg">
-							<path fill-rule="evenodd" d="M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
-						  </svg>
+						<img  src="images\square (1).svg" width="40px" height="30px;"> 
 						</span>
-					    <div style="margin-left:10px;">Publier sous...</div>
+					    <div style="margin-left:0px;">Publier sous...</div>
 					</div>
 				
 			
-				<div style="border-bottom: solid 1px #ddd;
-					">
-						<div style="padding:5px;">
-							<div class="page-header -i navbar navbar-fixed-top" style="margin-top: 40px;">
-								<!-- BEGIN HEADER INNER -->
-								<div class="page-header-inner">
-									<div class="col-md-3 " style="margin-right:10px;padding-left:1px;">
-										<div  class="  note-header">Domaines</div>
-									</div>	
-									<div class="col-md-3" style="margin-right:10px;" >
-										<div class=" note-header">Réseaux</div>
-									</div>	
-									<div class="col-md-2 " style="margin-left:10px;" >
-										<div class=" note-header">Serveurs favoris</div>
-									</div>	
-									<div class="col-md-2 " >
-										<div class=" note-header">Partenaires</div>
-									</div>	
-								</div>
-								<!-- END HEADER INNER -->
-							
-						</div>
-					</div>
+			
+						
 				</div>
-				</div>
+				
 
 				<div class="modal-body" >
+				     <div   style=" width:100%;
+					 height: 40%px;  
 				
-					<div class="col-md-3 ">
-						<div class="portlet light " style="padding-top:14px ! important;">
-							
-							<div class="portlet-body " >
-
-							<ul id="racine" >						
-				  			
-				  			  	<ul class="domaine active" >
-				  			  		
-									<li id="1 "  class="domaine-list selected" >
-										<img class="selected-img" src="images\Square.svg" style=" width:22px; margin-right: 6px;" > Local </li>  
-									   
-																		 <li id="2 "  class="domaine-list " >
-										<img class="" src="images\Square.svg" style=" width:22px; margin-right: 6px;" > Commerce </li>  
-									   
-																		 <li id="3 "  class="domaine-list " >
-										<img class="" src="images\Square.svg" style=" width:22px; margin-right: 6px;" > Informations technologies </li> 
-
-										<li id="3 "  class="domaine-list " >
-											<img class="" src="images\Square.svg" style=" width:22px; margin-right: 6px;" > Education </li>  
-
-											<li id="3 "  class="domaine-list " >
-												<img class="" src="images\Square.svg" style=" width:22px; margin-right: 6px;" > Industries </li>  
-									   
-				      				
-				      				
-				      							      				
-				      				
-				      			
-   			   					</ul>
-								
-								
-								</ul>
-								
-							
-							</div>
-						</div>
+					 border: 1px solid #E5E5E5;
+					 box-sizing: border-box;
+					 padding-right:5px;
+					 margin-bottom:10px;
+					 
+					 " > 
+					
+					<div>		
+					<div class="page-header -i navbar" style="padding-left:13px !important;">
 						
+							<!-- BEGIN HEADER INNER -->
+							
+								<div class="col-md-3 " style="margin-right:10px;" >
+									
+									<div style="margin-left:0px;" class="  note-header">Domaines</div>
+								
+								</div>	
+								<div class="col-md-3" style="margin-right:10px;" >
+									<div class=" note-header">Réseaux</div>
+								</div>	
+								<div class="col-md-3 " style="margin-left:10px;" >
+									<div class=" note-header">Serveurs favoris</div>
+								</div>	
+								<div class="col-md-2 " >
+									<div class=" note-header">Partenaires</div>
+								</div>	
+							
+							<!-- END HEADER INNER -->
+					</div>	
 					</div>
+					
+				
+							
+					
+						<div id="networkk"  >
+							<div class="col-md-3 " >
+								<div  style="margin-left:1px;" >
+																
+																		
+																		
+																			<a href="javascript:;" value="1" class="list-group-item selected "> <img style=" width:25px; margin-right: 6px;" src="images\square (1).svg" >Local</a>
+																			<a href="javascript:;" value="2" class="list-group-item "> <img style=" width:25px; margin-right: 6px;" src="images\square (1).svg" > Commerce</a>
+																			<a href="javascript:;" value="3" class="list-group-item "> <img style=" width:25px; margin-right: 6px;" src="images\square (1).svg" > Information technologies</a>
+																			<a href="javascript:;" value="3" class="list-group-item "> <img style=" width:25px; margin-right: 6px;" src="images\square (1).svg" > Education</a>
+																			<a href="javascript:;" value="3" class="list-group-item "> <img style=" width:25px; margin-right: 6px;" src="images\square (1).svg" > Industrie</a>
+																			
+		
+								
+								</div>
+							</div>
+						 </div>
+						
+					
 
 				
-					<div id="networkk" >
-						<div class="col-md-3 ">
-							<div class="portlet light  list-network">
-								<div class="portlet-body " style="margin-left:10px;">
+					<div id="networkk"  >
+						<div class="col-md-3 " >
+							<div  style="margin-left:10px;" >
 															
-																		<a href="javascript:;" id="showa"  value="4" class="list-group-item "> <img style=" width:22px; margin-right: 6px;"  src="images\Square.svg" > Regional</a>
+																		<a href="javascript:;"  value="4" class="list-group-item selected "> <img style=" width:25px; margin-right: 6px;"  src="images\square (1).svg" > Regional</a>
 																	
-																<h4 class="communities-networks" >Communities network</h4>
-																		<a href="javascript:;" value="1" class="list-group-item "> <img style=" width:22px; margin-right: 6px;" src="images\Square.svg" >Chambs works</a>
-																		<a href="javascript:;" value="2" class="list-group-item "> <img style=" width:22px; margin-right: 6px;" src="images\Square.svg" > Clusters</a>
-																		<a href="javascript:;" value="3" class="list-group-item "> <img style=" width:22px; margin-right: 6px;" src="images\Square.svg" > Local newspapers</a>
-																		<a href="javascript:;" value="3" class="list-group-item "> <img style=" width:22px; margin-right: 6px;" src="images\Square.svg" > Technoparks</a>
+																<h4 class="communities-networks" style="font-family:calibri;" >Communities networks</h4>
+																		<a href="javascript:;" value="1" class="list-group-item "> <img style=" width:25px; margin-right: 6px;" src="images\square (1).svg" >Chambs works</a>
+																		<a href="javascript:;" value="2" class="list-group-item "> <img style=" width:25px; margin-right: 6px;" src="images\square (1).svg" > Clusters</a>
+																		<a href="javascript:;" value="3" class="list-group-item "> <img style=" width:25px; margin-right: 6px;" src="images\square (1).svg" > Local newspapers</a>
+																		<a href="javascript:;" value="3" class="list-group-item "> <img style=" width:25px; margin-right: 6px;" src="images\square (1).svg" > Technoparks</a>
 																		
 	
-								</div>
+							
 							</div>
 						</div>
 					 </div>
 					 <div id="networkkk" >
-						<div class="col-md-2 ">
-							<div class="portlet light  list-network" style="margin-left:10px;">
-								<div class="portlet-body " style="
-								padding-left:30px;">
+						<div class="col-md-3 ">
+							<div  style="margin-left:30px;" >
+								
 															
 								    
-									<a href="javascript:;" value="1" class="list-group-item "> <img style=" width:22px; margin-right: 6px;" src="images\stop-fill.svg" > Fiche produit</a>
-									<a href="javascript:;" value="2" class="list-group-item "> <img style=" width:22px; margin-right: 6px;" src="images\stop-fill.svg" > Fiche service</a>
-									<a href="javascript:;" value="3" class="list-group-item "> <img style=" width:15px; margin-right: 10px;margin-left:5px;" src="images\square.svg" > Offre d'emploi</a>
-									<a href="javascript:;" value="3" class="list-group-item "> <img style=" width:15px; margin-right: 10px;margin-left:5px;" src="images\square.svg" > Offre d'emploi</a>
+									<a href="javascript:;" value="1" class="list-group-item "> <img style=" width:22px; margin-right: 6px;" src="images\stop-fill.svg" > Region sud</a>
+									<a href="javascript:;" value="2" class="list-group-item "> <img style=" width:22px; margin-right: 6px;" src="images\stop-fill.svg" > Hauts de-France</a>
+									<a href="javascript:;" value="3" class="list-group-item "> <img style=" width:15px; margin-right: 10px;margin-left:5px;" src="images\square (1).svg" > Auvergne-Rhône Alpes</a>
+									<a href="javascript:;" value="3" class="list-group-item "> <img style=" width:15px; margin-right: 10px;margin-left:5px;" src="images\square (1).svg" >Occitanie</a>
 									
 
-</div>
-							</div>
-						</div>
+							   </div>
+							   </div>
+						
 					 </div>
 					 
 					 <div id="networkkkk" >
-						<div class=" col-md-2 ">
+						<div class=" col-md-3">
 							
-							<div class="portlet light  list-network">
-								<div class="portlet-body " style="
-								padding-left:40px;">
+						
+						
 															
-								
+								   <div style="margin-left:30px;">
 									<a href="javascript:;" value="1" class="list-group-item "> CCI Paca</a>
 									<a href="javascript:;" value="2" class="list-group-item "> La Gazelle Nord Pas de Calais</a>
 									<a href="javascript:;" value="3" class="list-group-item "> CCI De Lyon</a>
 									<a href="javascript:;" value="3" class="list-group-item "> La Tribune</a>
-									
+									</div>
 
-                              </div>
-							</div>
+						
 						</div>
 					 </div>
-					 <form role="form" class='form-horizontal' style="margin-top:100px;">  
-						<div class="row" style=" padding-top: 16px;">
+					
+					 <form role="form" class='form-horizontal' >  
+						<div class="row" >
 							<div class="col-md-2">
 							
 							</div>
@@ -882,53 +1363,83 @@ display:inline-block;
 							
 								<div class="form-group">
 									<div class="col-xs-6 text-right">
-										<label for="cpTitle">Type</label>
+										<label for="cpTitle"></label>
 									</div>
 									<div class="col-xs-6">
-										<input type="text" class="form-control" placeholder="Entreprise" id="cpTitle" />
+									
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="col-xs-6 text-right">
-										<label for="cpTitle">Nom de l'orgnanisation</label>
+										<label for="cpTitle"></label>
 									</div>
 									<div class="col-xs-6">
-										<input type="text" class="form-control"  id="cpTitle" />
+										
 									</div>
 								</div> 
-								<div class="form-group">
-									<div class="col-xs-6 text-right">
-										<label for="cpTitle">Url</label>
-									</div>
-									<div class="col-xs-6">
-										<input type="text" class="form-control"  id="cpTitle" />
-									</div>
-								</div>
-								<div class="form-group">
-									<div class="col-xs-6 text-right">
-										<label for="cpTitle">Tarifs</label>
-									</div>
-									<div class="col-xs-6">
-										<input type="text" class="form-control"  id="cpTitle" />
-									</div>
-								</div>
+							
 	
+
+					  </div>
+					  <div class="col-md-2"></div>
+					  </div>
+					  </form>
+					</div>
+					
+				
+					 <form role="form" class='form-horizontal' >  
+						<div class="row" >
 							
 							
 						
-	
+							<div class="col-md-12"> 
 							
+								<div class="form-group"style="margin-right:5px;">
+									<div class="col-xs-4 text-right">
+										<label for="cpTitle" style="font-family: calibri;" class="font-weight-bold" >Type</label>
+									</div>
+									<div class="col-xs-3">
+										<input style ="background-color:#f3f3f3 ;" type="text" class="form-control"  class="colorr"placeholder="Entreprise" id="cpTitle" />
+									</div>
+								</div>
+								<div class="form-group" style="margin-right:5px;"  >
+									<div class="col-xs-4 text-right">
+										<label for="cpTitle" style="font-weight: bolder; font-family: calibri;">Nom de l'entreprise</label>
+									</div>
+									<div class="col-xs-8" >
+										<input type="text"  class="form-control"  placeholder="Amadeus"  />
+									</div>
+								
+								</div> 
+								<div class="form-group" style="margin-right:5px;">
+									<div class="col-xs-4 text-right">
+										<label for="cpTitle" style="font-family: calibri;" >Url</label>
+									</div>
+									<div class="col-xs-8">
+										<input type="text" class="form-control"  placeholder="www.amadeus.com"  id="cpTitle" />
+									</div>
+								</div>
+								<div class="form-group" style="margin-right:5px;">
+									<div class="col-xs-4 text-right">
+										<label for="cpTitle" style="font-family: calibri;" >Tarifs</label>
+									</div>
+									<div class="col-xs-8">
+										<input style="background-color:#f3f3f3 ;" type="text" class="form-control"  placeholder="2 Publications : 3 euros par mois"  id="cpTitle" />
+									</div>
+								</div>
+		
 						
 					  </div>
 					  <div class="col-md-2"></div>
 					  </div>
 					  </form>
-				  </div> 
+					  </div>
+				
 
 				
 				  <div class="modal-footer"> 
-					<button type="button" class="btn btn-sm default" data-dismiss="modal">Annuler</button>
-					<button type="button" class="btn btn-sm default">Publier</button>
+					<button type="button" style=" border: 2px solid white;width:100px;height:40px;" class="btn btn-lg default" data-dismiss="modal">Annuler</button>
+					<button type="button"  style=" border: 2px solid white; width:100px;height:40px;" class="btn btn-lg default">Publier</button>
 				
 					
 				
@@ -954,29 +1465,7 @@ display:inline-block;
 
 				
 </body>
-<script>
-	// Get the modal
-	var modal = document.getElementById('mymodal');
-	
-	// When the user clicks anywhere outside of the modal, close it
-	window.onclick = function(event) {
-	  if (event.target == modal) {
-		modal.style.display = "none";
-	  }
-	} 
 
-	
-
-
-	
-
-type="text/javascript">
-	function HandleBrowseClick(input_image)
-	{
-		var fileinput = document.getElementById(input_image);
-		fileinput.click();
-	}     
-	</script>
 	
 <!-- END BODY -->
 </html>
