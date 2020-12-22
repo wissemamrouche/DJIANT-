@@ -16,6 +16,7 @@ label,
 td,
 th,
 p,
+a,
 button,
 ul,
 code,
@@ -2985,7 +2986,10 @@ Form Layouts
 }
 
 /* Control Label */
-
+.control-label {
+  /* margin-top: 1px; */
+  padding-right: 20px;
+}
 .control-label .required {
   color: #e02222;
   font-size: 12px;
@@ -4135,7 +4139,7 @@ Notes
 .note {
   /* margin: 0 0 0px 0; */
   padding: 2px 1px 5px 8px;
-  border-left: 1px solid #f3f3f3;
+  border-left: 1px solid #383838;
   -webkit-border-radius: 0 4px 4px 0;
   -moz-border-radius: 0 4px 4px 0;
   -ms-border-radius: 0 4px 4px 0;
@@ -4256,7 +4260,7 @@ Notes
 .note-header {
   margin: 8px 0px 0px 0px;
   padding: 2px 1px 1px 8px;
-  border-left: 1px solid #f3f3f3;
+  border-left: 1px solid #A8A8A8;
   
 }
 /***
@@ -6540,7 +6544,6 @@ AngularJS Basic Animations
   border: 1px solid #b8b8b8;
   border-radius:1px;
 }
-
 .btn.default:hover, .btn.default:focus, .btn.default:active, .btn.default.active {
   color: #333333;
   background-color: lightgray;
