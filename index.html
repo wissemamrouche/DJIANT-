@@ -61,13 +61,13 @@
 	<!-- BEGIN HEADER INNER -->
 	<div class="page-header-inner">
 		<div class="djiant-col-md-3">
-			<div  class="  note-header">Emplacements</div>
+			<div  class="  note-headeer">Emplacements</div>
 		</div>	
 		<div class="djiant-col-md-5" style="margin-left:34px;" >
-			<div class=" note-header">Ressources</div>
+			<div class=" note-headeer">Ressources</div>
 		</div>	
 		<div class="djiant-col-md-5 " style="margin-right: 40px;">
-			<div class=" note-header">Détails</div>
+			<div class=" note-headeer">Détails</div>
 		</div>	
 	</div>
 	<!-- END HEADER INNER -->
@@ -730,9 +730,9 @@
 						<div 
 						>
 							<div >
-							<button style="border: 1px solid white;"  class="btn btn-md default" >Enregistrer</button>
+								<button  id="publier"  class="btn btn-md default" style=" border: 1px solid white;margin-right:0px!important;background-color:#f3f3f3;" data-toggle="modal" data-target="#mymodal1">Publier sous</button>
 							<button style="border: 1px solid white;"  class="btn btn-md default" >Visualiser</button>
-							<button  id="publier"  class="btn btn-md default" style=" border: 1px solid white;margin-right:0px!important;" data-toggle="modal" data-target="#mymodal1">Publier sous</button>
+							<button style="border: 1px solid white;" class="btn btn-md default">Enregistrer</button>
 							<button style="border: 1px solid white;" class="btn btn-md default"  data-dismiss="modal">Abandonner</button>
 							</div>
 						</div> 
@@ -741,15 +741,15 @@
 				</div>
 				<!-- start of modal form-->
 
-			<div class="modal-body" style="widows:100px;height:70%;margin-top:1px;background-color:#f3f3f3"> 
+			<div class="modal-body" style="widows:100px;height:70%;margin-top:1px;background-color:white;"> 
 					 <!-- start of the form--> 
 			
 					 <form role="form" style="
-				box-shadow: 4px 2px 5px 0px rgba(243,241,241,0.75);
-		-webkit-box-shadow: 4px 2px 5px 0px rgba(243,241,241,0.75);
-		-moz-box-shadow: 4px 2px 5px 0px rgba(243,241,241,0.75);
-					 background-color:white;width:900px;height:1800px; margin-top:90px;margin-left:30px;box-sizing: border-box;
-					 border: 1px solid transparent;
+				box-shadow: 6px 2px 5px 0px rgba(233,231,231,0.75);
+		-webkit-box-shadow: 6px 2px 5px 0px rgba(233,231,231,0.75);
+		-moz-box-shadow: 6px 2px 5px 0px rgba(233,231,231,0.75);
+					 background-color:white;width:900px;height:1800px; margin-top:90px;margin-left:15px;box-sizing: border-box;
+					 border: 1px solid #E8E8E8;
 					 border-radius: 4px;
 					 " class='form-horizontal'>
 						<div style="display:inline-block; margin-left:70px;margin-top:50px;margin-bottom:15px; ">
@@ -1234,16 +1234,15 @@
 </div>
 <div class="container">
 	<div  class="modal " id="mymodal1"  data-backdrop="false" tabindex="-1" role="dialog"> 
-		<div class="modal-dialog modal-lg" style="margin-top:100px;position: fixed;       margin-left:111px;margin-bottom:100px;-webkit-box-shadow: 0px 0px 17px 0px rgba(142, 142, 142, 0.87);
-		-moz-box-shadow:    0px 0px 17px 0px rgba(142, 142, 142, 0.87);
-		box-shadow:         0px 0px 17px 0px rgba(142, 142, 142, 0.87);"
+		<div class="modal-dialog modal-lg" style="margin-top:80px;position: fixed;       margin-left:23px;margin-bottom:100px;box-shadow: -1px 6px 5px 1px rgba(231,231,231,0.75);
+		-webkit-box-shadow: -1px 6px 5px 2px rgba(231,231,231,0.75);
+		-moz-box-shadow: -1px 6px 5px 1px rgba(231,231,231,0.75);"
 		> 
 			<div class="modal-content" id="scrollbox">
-				<div class="modal-header" style="background-color:#f3f3f3;     border-bottom:white !important;padding-left:180px !important;padding-bottom:0px!important;scroll-padding-top:3px ! important;">
+				<div class="modal-header" style="background-color:	#f5f5f5;     border-bottom:white !important;padding-left:20px !important;scroll-padding-top:3px ! important;">
 					<div class="page-logo" style="display: inline-flex; align-items: center;">
-						<img  src="images\square (1).svg" width="40px" height="30px;"> 
 						</span>
-					    <div style="margin-left:0px;">Publier sous...</div>
+					    <div style="margin-left:1px;margin-top:10px;">Publier sous...</div>
 					</div>
 				
 			
@@ -1259,39 +1258,39 @@ max-height: calc(100vh - 150px);
 }
 				</style>
 
-				<div class="modal-body" style="background-color:#f3f3f3;">
+				<div class="modal-body" style="background-color:	#f5f5f5;padding-top:15px;">
 					<div style="display:inline-flex;">
-						<div style="flex:2;padding-left:15px;padding-right:15px;">
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+						<div style="flex:4;padding-left:10px;">
+							<p>Sélectionnez un ou plusieurs serveurs sur lesquels vous souhaitez rendre visibles cette publication.<br><br> Vous pouvez à tout moment ajouter dans vos favoris des réseaux et serveurs et les retrouver ici.</p>
 						</div> 
 				     <div   style=" width:900px;align-self:flex-end;
-					 height: 40%px;  
+					 height:350px;  
 				      background-color: white;
 					 border: 1px solid #E5E5E5;
 					 box-sizing: border-box;
-					 padding-right:5px;
-					 margin-bottom:8px;
+					 margin-bottom:10px;
+					 margin-left:10px;
 					 
 					 " > 
 					
 					<div>		
-					<div class="page-header -i navbar" style="padding-left:13px !important;background-color:white;">
+					<div class="page-header -i navbar" style="padding-left:13px !important;background-color:#f2f3f4;font-weight:600;">
 						
 							<!-- BEGIN HEADER INNER -->
 							
 								<div class="col-md-3 " style="margin-right:8px;" >
 									
-									<div style="margin-left:0px;" class="  note-header">Domaines</div>
+									<div style="margin-left:0px;" class="  note-header">Réseaux favoris</div>
 								
 								</div>	
 								<div class="col-md-3" style="margin-right:8px;" >
-									<div class=" note-header">Réseaux</div>
-								</div>	
-								<div class="col-md-3 " style="margin-left:8px;" >
 									<div class=" note-header">Serveurs favoris</div>
 								</div>	
+								<div class="col-md-3 " style="margin-left:8px;" >
+									<div class=" note-header">Partenaire</div>
+								</div>	
 								<div class="col-md-2 " >
-									<div class=" note-header">Partenaires</div>
+									<div class=" note-header">Publié</div>
 								</div>	
 							
 							<!-- END HEADER INNER -->
@@ -1303,17 +1302,15 @@ max-height: calc(100vh - 150px);
 					
 						<div id="networkk"  >
 							<div class="col-md-3 " >
-								<div  style="margin-left:1px;" >
+								<div  style="margin-left:5px;" >
 																
 																		
-																		
-																			<a href="javascript:;" value="1" class="list-group-item selected "> <img style=" width:25px; margin-right: 6px;" src="images\square (1).svg" >Local</a>
-																			<a href="javascript:;" value="2" class="list-group-item "> <img style=" width:25px; margin-right: 6px;" src="images\square (1).svg" > Commerce</a>
-																			<a href="javascript:;" value="3" class="list-group-item "> <img style=" width:25px; margin-right: 6px;" src="images\square (1).svg" > Information technologies</a>
-																			<a href="javascript:;" value="3" class="list-group-item "> <img style=" width:25px; margin-right: 6px;" src="images\square (1).svg" > Education</a>
-																			<a href="javascript:;" value="3" class="list-group-item "> <img style=" width:25px; margin-right: 6px;" src="images\square (1).svg" > Industrie</a>
-																			
-		
+									<a href="javascript:;"  value="4" class="list-group-item selected "> <img style=" width:25px; margin-right: 6px;"  src="images\square (1).svg" > Regional</a>
+											<a href="javascript:;" value="1" class="list-group-item "> <img style=" width:25px; margin-right: 6px;" src="images\square (1).svg" >Chambs works</a>
+											<a href="javascript:;" value="2" class="list-group-item "> <img style=" width:25px; margin-right: 6px;" src="images\square (1).svg" > Clusters</a>
+											<a href="javascript:;" value="3" class="list-group-item "> <img style=" width:25px; margin-right: 6px;" src="images\square (1).svg" > Local newspapers</a>
+											<a href="javascript:;" value="3" class="list-group-item "> <img style=" width:25px; margin-right: 6px;" src="images\square (1).svg" > Technoparks</a>
+											
 								
 								</div>
 							</div>
@@ -1324,15 +1321,12 @@ max-height: calc(100vh - 150px);
 				
 					<div id="networkk"  >
 						<div class="col-md-3 " >
-							<div  style="margin-left:8px;" >
+							<div  style="margin-left:10px;" >
 															
-																		<a href="javascript:;"  value="4" class="list-group-item selected "> <img style=" width:25px; margin-right: 6px;"  src="images\square (1).svg" > Regional</a>
-																	
-																<h4 class="communities-networks" style="font-family:calibri;" >Communities networks</h4>
-																		<a href="javascript:;" value="1" class="list-group-item "> <img style=" width:25px; margin-right: 6px;" src="images\square (1).svg" >Chambs works</a>
-																		<a href="javascript:;" value="2" class="list-group-item "> <img style=" width:25px; margin-right: 6px;" src="images\square (1).svg" > Clusters</a>
-																		<a href="javascript:;" value="3" class="list-group-item "> <img style=" width:25px; margin-right: 6px;" src="images\square (1).svg" > Local newspapers</a>
-																		<a href="javascript:;" value="3" class="list-group-item "> <img style=" width:25px; margin-right: 6px;" src="images\square (1).svg" > Technoparks</a>
+																		<a href="javascript:;"  value="4" class="list-group-item selected "> <img style=" width:25px; margin-right: 6px;"  src="images\square (1).svg" > Paca</a>
+																		<a href="javascript:;" value="1" class="list-group-item "> <img style=" width:25px; margin-right: 6px;" src="images\square (1).svg" >Hauts de-France</a>
+																		<a href="javascript:;" value="2" class="list-group-item "> <img style=" width:25px; margin-right: 6px;" src="images\square (1).svg" > Auvergne-Rhône Alpes</a>
+									
 																		
 	
 							
@@ -1345,10 +1339,13 @@ max-height: calc(100vh - 150px);
 								
 															
 								    
-									<a href="javascript:;" value="1" class="list-group-item "> <img style=" width:22px; margin-right: 6px;" src="images\stop-fill.svg" > Region sud</a>
-									<a href="javascript:;" value="2" class="list-group-item "> <img style=" width:22px; margin-right: 6px;" src="images\stop-fill.svg" > Hauts de-France</a>
-									<a href="javascript:;" value="3" class="list-group-item "> <img style=" width:15px; margin-right: 8px;margin-left:5px;" src="images\square (1).svg" > Auvergne-Rhône Alpes</a>
-									<a href="javascript:;" value="3" class="list-group-item "> <img style=" width:15px; margin-right: 8px;margin-left:5px;" src="images\square (1).svg" >Occitanie</a>
+								<div >
+									<a href="javascript:;" value="1" class="list-group-item "> CCI Paca</a>
+									<a href="javascript:;" value="2" class="list-group-item " style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;
+									"> La Gazelle Nord Pas de Calais</a>
+									<a href="javascript:;" value="3" class="list-group-item "> CCI De Lyon</a>
+									<a href="javascript:;" value="3" class="list-group-item "> La Tribune</a>
+									</div>
 									
 
 							   </div>
@@ -1359,16 +1356,19 @@ max-height: calc(100vh - 150px);
 					 <div id="networkkkk" >
 						<div class=" col-md-3">
 							
-						
+							<div  style="margin-left:31px;" >
+															
+								<a href="javascript:;"  value="4" class="list-group-item"> <img style=" width:25px; margin-right: 6px;"  src="images\Icon Publié Vert.svg" ></a>
+								<a href="javascript:;" value="1" class="list-group-item "> <img style=" width:25px; margin-right: 6px;" src="images\Icon Publié Gris.svg" ></a>
+								<a href="javascript:;" value="2" class="list-group-item "> <img style=" width:25px; margin-right: 6px;" src="images\Icon Publié Gris.svg" ></a>
+
+								
+
+
+</div>
 						
 															
-								   <div style="margin-left:30px;">
-									<a href="javascript:;" value="1" class="list-group-item "> CCI Paca</a>
-									<a href="javascript:;" value="2" class="list-group-item " style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;
-									"> La Gazelle Nord Pas de Calais</a>
-									<a href="javascript:;" value="3" class="list-group-item "> CCI De Lyon</a>
-									<a href="javascript:;" value="3" class="list-group-item "> La Tribune</a>
-									</div>
+								   
 
 						
 						</div>
@@ -1421,7 +1421,7 @@ max-height: calc(100vh - 150px);
 										<label for="cpTitle" style="font-family: calibri;" class="font-weight-bold" >Type</label>
 									</div>
 									<div class="col-xs-3">
-										<input  type="text" class="form-control"  class="colorr"placeholder="Entreprise" id="cpTitle" />
+										<input  type="text" class="form-control"  class="colorr"  style ="background-color:	#ecedee;"placeholder="Entreprise" id="cpTitle" />
 									</div>
 								</div>
 								<div class="form-group" style="margin-right:5px;"  >
@@ -1446,7 +1446,7 @@ max-height: calc(100vh - 150px);
 										<label for="cpTitle" style="font-family: calibri;" >Tarifs</label>
 									</div>
 									<div class="col-xs-8">
-										<input type="text" class="form-control"  placeholder="2 Publications : 3 euros par mois"  id="cpTitle" />
+										<input type="text" class="form-control" style ="background-color:	#ecedee;"  placeholder="2 Publications : 3 euros par mois"  id="cpTitle" />
 									</div>
 								</div>
 		
@@ -1460,8 +1460,8 @@ max-height: calc(100vh - 150px);
 
 				
 				  <div class="modal-footer" style="background-color:#f3f3f3;"> 
-					<button type="button" style="  border: 2px solid white;width:100px;height:40px;background-color:white;" class="btn btn-lg default" id="annuler" data-dismiss="modal">Annuler</button>
-					<button type="button"  style=" border: 2px solid white; width:100px;height:40px;background-color:white;" class="btn btn-lg default">Publier</button>
+					<button type="button" style="  border: 2px solid 	#ecedee;;width:100px;height:40px;background-color:	#ecedee;" class="btn btn-lg default" id="annuler" data-dismiss="modal">Annuler</button>
+					<button type="button"  style=" border: 2px solid 	#ecedee;; width:100px;height:40px;background-color:	#ecedee;" class="btn btn-lg default">Publier</button>
 				
 					
 				
@@ -1543,4 +1543,21 @@ max-height: calc(100vh - 150px);
 
 	
 </style>
+<script>
+	var b1 = document.getElementById("publier");
+	var b2 = document.getElementById("annuler");
 
+
+b1.onclick = function() {
+  // whenever button is clicked add a class to the button, which overwrites the style
+  $(b1).addClass("button_publier");
+}
+
+b2.onclick = function() {
+  // whenever button is clicked add a class to the button, which overwrites the style
+  $(b1).removeClass("button_publier");
+  $(b1).addClass("button_publier1");
+}
+
+
+</script>

@@ -4256,7 +4256,13 @@ Notes
 .note-header {
   margin: 8px 0px 0px 0px;
   padding: 2px 1px 1px 8px;
-  border-left: 1px solid #f3f3f3;
+  border-left: 1px solid 	#96999a;
+  
+}
+.note-headeer {
+  margin: 8px 0px 0px 0px;
+  padding: 2px 1px 1px 8px;
+  border-left: 1px solid 	#f3f3f3;
   
 }
 /***

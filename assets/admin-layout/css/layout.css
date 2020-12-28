@@ -44,20 +44,18 @@
   }
 }
 /*** wissem code **/ 
-button#publier:active
+
+.button_publier
 {
-	background:#383838;
-	color:white;
+	background:#afb5b9 !important;
+	color:white !important;
 }
-button#publier:focus
+.button_publier1
 {
-	background:#383838;
-	color:white;
+	background:#f3f3f3;
+	color:#383838!important;
 }
-button#publier.selected{
-	background:#383838;
-	color:white;
-}
+
 .btn {
 	font-family:calibri light;
 	font-size: 14px;
